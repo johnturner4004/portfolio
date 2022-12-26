@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap");
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, li {
+  padding: 0;
+  margin: 0;
+}
+
+.home {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name {
+  background-color: #00f;
+  color: #fff;
+  width: fit-content;
+  min-width: 28.125rem;
+  border-radius: 1.25rem;
+  text-align: center;
+  padding: 0.625rem;
+  box-shadow: 0.3125rem 0.3125rem 0.9375rem #000;
+  transform: rotate(-15deg);
+}
+.name__hello {
+  font-size: 3.125rem;
+  font-weight: 700;
+}
+.name__text {
+  font-size: 2rem;
+}
+.name__name {
+  font-family: "Gochi Hand", cursive;
+  font-size: 6.25rem;
+  background-color: #fff;
+  color: #000;
+  padding: 0.625rem;
+  border-radius: 1.25rem;
+  margin-top: 0.625rem;
+}
+.name__container {
+  padding: 3.125rem;
+}
+
+.skill {
+  width: 50vw;
+}
+.skill__page {
+  background-color: #eef;
+  padding: 0 3.125rem;
+  transform: rotate(2.5deg);
+  box-shadow: 0.3125rem 0.3125rem 0.9375rem #000;
+}
+.skill__page-inner {
+  border-left: 1px solid #da6a8d;
+  margin-left: 3.125rem;
+  padding: 3.125rem 0;
+}
+.skill__page-inner h2 {
+  padding-left: 0.3125rem;
+  font-family: "Gochi Hand", cursive;
+  line-height: 1.875rem;
+}
+.skill__list {
+  padding-left: 1.875rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.skill__list-item {
+  font-family: "Gochi Hand", cursive;
+  line-height: 1.875rem;
+}
+.skill__list-item-2 {
+  width: 50%;
+}
+.skill__list-item-2 > skill__line {
+  width: 50%;
+  border-color: red;
+}
+.skill__line {
+  display: flex;
+  flex-direction: column;
+  margin-left: -8.125rem;
+  width: 50vw;
+  border-bottom: 1px solid #98b0b8;
+  line-height: 3.125rem;
+}/*# sourceMappingURL=main.css.map */

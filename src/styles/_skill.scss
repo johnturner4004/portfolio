@@ -1,0 +1,49 @@
+.skill {
+  width: 50vw;
+
+  &__page {
+    background-color: #eef;
+    padding: 0 rem(50);
+    transform: rotate(2.5deg);
+    box-shadow: rem(5) rem(5) rem(15) #000;
+
+    &-inner {
+      border-left: 1px solid #da6a8d;
+      margin-left: rem(50);
+      padding: rem(50) 0;
+
+      & h2 {
+        padding-left: rem(5);
+        font-family: 'Gochi Hand', cursive;
+        line-height: rem(30);
+      }
+    }
+  }
+
+  &__list {
+    padding-left: rem(30);
+    display: flex;
+    flex-wrap: wrap;
+    &-item {
+      font-family: 'Gochi Hand', cursive;
+      line-height: rem(30);
+      &-2 {
+        width: 50%;
+
+        > skill__line {
+          width: 50%;
+          border-color: red;
+        }
+      }
+    }
+  }
+
+  &__line {
+    display: flex;
+    flex-direction: column;
+    margin-left: rem(-130);
+    width: 50vw;
+    border-bottom: 1px solid #98b0b8;
+    line-height: rem(50);
+  }
+}

@@ -1,0 +1,34 @@
+.name {
+  background-color: #00f;
+  color: #fff;
+  width: fit-content;
+  min-width: rem(450);
+  border-radius: rem(20);
+  text-align: center;
+  padding: rem(10);
+  box-shadow: rem(5) rem(5) rem(15) #000;
+  transform: rotate(-15deg);
+
+  &__hello {
+    font-size: rem(50);
+    font-weight: 700;
+  }
+
+  &__text {
+    font-size: rem(32);
+  }
+
+  &__name {
+    font-family: 'Gochi Hand', cursive;
+    font-size: rem(100);
+    background-color: #fff;
+    color: #000;
+    padding: rem(10);
+    border-radius: rem(20);
+    margin-top: rem(10);
+  }
+
+  &__container {
+    padding: rem(50);
+  }
+}
