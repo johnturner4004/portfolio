@@ -6,12 +6,19 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './views/Home';
 import Error from './views/Error';
+import WorkHistory from './views/WorkHistory';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Home />,
-    errorElement: <Error />
+    errorElement: <Error />,
+    children: [
+    ]
+  },
+  {
+    path: 'work-history',
+    element: <WorkHistory />
   }
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));
