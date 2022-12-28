@@ -1,3 +1,9 @@
+@keyframes cursor {
+  0% {color: #000}
+  50% {color: #0f0}
+  100% {color: #000}
+}
+
 .work-history {
   background-color: #dad1be;
   width: calc(100vw - rem(100));
@@ -18,5 +24,15 @@
       padding: rem(50);
       height: calc(100% - rem(110));
     }
+  }
+
+  &__cursor {
+    animation-name: cursor;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+
+  &__company {
+    font-size: rem(48);
   }
 }
