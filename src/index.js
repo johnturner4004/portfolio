@@ -15,6 +15,7 @@ import './styles/main.css'
 import Home from './views/Home';
 import WorkHistory from './views/WorkHistory';
 import Error from './views/Error';
+import Education from './views/Education'
 import rootReducer from './redux/reducers/_root.reducer';
 
 const sagaMiddleware = createSagaMiddleware();
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
   {
     path: 'work-history',
     element: <WorkHistory />
+  },
+  {
+    path: 'education',
+    element: <Education />
   }
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));
