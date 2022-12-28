@@ -1,28 +1,33 @@
 const express = require('express');
 const mongoose = require('mongoose');
+
 require('dotenv').config();
 
 const app = express();
 
 const mongoUri = process.env.MONGO_URI;
 
-mongoose.connect(
-  mongoUri,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  },
-)
+connection().catch(err => console.error(err));
 
-// const jobSchema = new mongoose.Schema({
-//   company: String,
-//   start_date: String,
-//   end_date: String,
-//   job_title: String,
-//   job_desscription: [String]
-// })
+async function connection() {
+  await mongoose.connect(
+    mongoUri,
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    },
+  )
+}
 
-// const Job = mongoose.model('Job', jobSchema)
+const jobSchema = new mongoose.Schema({
+  company: String,
+  start_date: String,
+  end_date: String,
+  job_title: String,
+  job_desscription: [String]
+})
+
+const Job = mongoose.model('Job', jobSchema)
 
 // const job = new Job({
 //   company: "Media Junction",
@@ -44,19 +49,14 @@ mongoose.connect(
 //     (err) => console.error(err)
 //   );
 
-app.get('/', (req, res) => {
-  Job.find({}, (err, found) => {
-    if (!err) {
-      console.log(found);
-      res.send(found);
-    }
-
+app.get('/api/work-history', async (req, res) => {
+  try {
+    const workHistory = await Job.find();
+    console.log(workHistory)
+    res.send(workHistory);
+  } catch (err) {
     console.error(err);
-    res.send("Some error has occured");
-  }).catch((err) => {
-    console.error(err);
-    console.log("Error occured");
-  })
+  }
 })
 
 const PORT = process.env.PORT || 5000;
