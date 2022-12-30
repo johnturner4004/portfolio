@@ -15,10 +15,10 @@ export default function WorkHistory() {
       <div className='work-history__monitor'>
         <div className='work-history__monitor-screen'>
           <h1 className='work-history__company'>Work History<span className='work-history__cursor'>|</span></h1>
-          <ul>
+          <ul className='work-history__list'>
             {workHistory.data ? workHistory.data.map(entry => {
               return (
-                <li key={entry._id.toString()}>
+                <li className='work-history__list-entry' key={entry._id.toString()}>
                   <h2>{entry.company}</h2>
                   <p>{entry.start_date} - {entry.end_date}</p>
                   <p>{entry.job_title}</p>

@@ -120,6 +120,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   color: #0f0;
 }
 .work-history__monitor-screen {
+  overflow: auto;
   box-shadow: rgba(255, 255, 255, 0.17) 0px -23px 25px 0px inset, rgba(255, 255, 255, 0.15) 0px -36px 30px 0px inset, rgba(255, 255, 255, 0.1) 0px -79px 40px 0px inset, rgba(255, 255, 255, 0.06) 0px 2px 1px, rgba(255, 255, 255, 0.09) 0px 4px 2px, rgba(255, 255, 255, 0.09) 0px 8px 4px, rgba(255, 255, 255, 0.09) 0px 16px 8px, rgba(255, 255, 255, 0.09) 0px 32px 16px;
   padding: 3.125rem;
   height: calc(100% - 6.875rem);
@@ -132,7 +133,29 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 .work-history__company {
   font-size: 3rem;
 }
+.work-history__list {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  width: 100%;
+}
+.work-history__list-entry {
+  width: 50%;
+}
+
+.new-work-history {
+  padding: 3.125rem;
+}
+.new-work-history__title {
+  font-size: 3rem;
+  text-align: center;
+}
 
 .education {
   background-color: #2b2b2b;
+  height: 100vh;
+  width: 100vw;
+  color: #ebeeec;
+  font-family: chalktastic, sans-serif;
+  padding: 3.125rem;
 }/*# sourceMappingURL=main.css.map */

@@ -7,16 +7,18 @@ import createSagaMiddleware from 'redux-saga';
 import logger from 'redux-logger';
 import { configureStore } from '@reduxjs/toolkit'
 
+import rootReducer from './redux/reducers/_root.reducer';
 import rootSaga from './redux/sagas/_root.saga.js'
 
 import './index.css';
 import './styles/main.css'
 
 import Home from './views/Home';
-import WorkHistory from './views/WorkHistory';
 import Error from './views/Error';
 import Education from './views/Education'
-import rootReducer from './redux/reducers/_root.reducer';
+import WorkHistory from './views/WorkHistory';
+import NewWorkHistory from './views/NewWorkHistory';
+import ManageWorkHistory from './views/ManageWorkHistory';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -45,8 +47,16 @@ const router = createBrowserRouter([
     element: <WorkHistory />
   },
   {
+    path: 'work-history/new',
+    element: <NewWorkHistory />
+  },
+  {
     path: 'education',
     element: <Education />
+  },
+  {
+    path: 'work-history/manage',
+    element: <ManageWorkHistory />
   }
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));

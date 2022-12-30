@@ -1,9 +1,7 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-
 require('dotenv').config();
-
-const app = express();
 
 const mongoUri = process.env.MONGO_URI;
 
@@ -19,45 +17,16 @@ async function connection() {
   )
 }
 
-const jobSchema = new mongoose.Schema({
-  company: String,
-  start_date: String,
-  end_date: String,
-  job_title: String,
-  job_desscription: [String]
-})
+const app = express();
 
-const Job = mongoose.model('Job', jobSchema)
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-// const job = new Job({
-//   company: "Media Junction",
-//   start_date: "October 2021",
-//   end_date: "Present",
-//   job_title: "Full Stack Engineer",
-//   job_description: [
-//     "Created website templates for HubSpot using HTML, javascript, jQuery, SCSS, CSS, and HubL",
-//     "Integrated apis with the HubSpot CRM and CMS",
-//     "Met with clients and potential clients to discuss their needs",
-//     "Followed design documents in Figma while crating the templates"
-//   ]
-// })
+const workHistory = require('./routes/work-history.router')
 
-// job
-//   .save()
-//   .then(
-//     () => console.log("One job added"),
-//     (err) => console.error(err)
-//   );
+app.use('/api/work-history', workHistory)
 
-app.get('/api/work-history', async (req, res) => {
-  try {
-    const workHistory = await Job.find();
-    console.log(workHistory)
-    res.send(workHistory);
-  } catch (err) {
-    console.error(err);
-  }
-})
+app.use(express.static('build'));
 
 const PORT = process.env.PORT || 5000;
 
