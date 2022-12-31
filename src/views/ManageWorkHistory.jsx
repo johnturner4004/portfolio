@@ -49,10 +49,8 @@ export default function ManageWorkHistory() {
   }
 
   const handleSubmit = (e) => {
-    console.log(e.target.dataset.id)
     if (change && change.hasOwnProperty(e.target.dataset.id)) {
-      console.log(change[e.target.dataset.id]);
-      dispatch({ type: 'UPDATE_WORK_HISTORY', payload: { id: e.target.id, update: change[e.target.dataset.id] }})
+      dispatch({ type: 'UPDATE_WORK_HISTORY', payload: { id: e.target.dataset.id, update: change[e.target.dataset.id] }})
     }
   }
 

@@ -20,7 +20,17 @@ function* newWorkHistory(action) {
   }
 }
 
+function* updateWorkHistory(action) {
+  try {
+    const update = action.payload;
+    yield axios.put('/api/work-history/update', update);
+  } catch (err) {
+    console.error(err, 'Error while updating work history');
+  }
+}
+
 export default function* workHistory() {
   yield takeLatest('GET_WORK_HISTORY', getWorkHistory);
   yield takeLatest('NEW_WORK_HISTORY', newWorkHistory);
+  yield takeLatest('UPDATE_WORK_HISTORY', updateWorkHistory);
 };

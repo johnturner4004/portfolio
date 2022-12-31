@@ -48,7 +48,15 @@ router.post('/new', async (req, res) => {
       );
     res.sendStatus(200);
   } catch (err) {
-    // console.error(err, 'Unable to post to db');
+    console.error(err, 'Unable to post to db');
+  }
+})
+
+router.put('/update', (req, res) => {
+  try {
+    console.log(req.body);
+  } catch (err) {
+    console.error(err, 'Unable to update db');
   }
 })
 
