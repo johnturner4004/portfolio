@@ -1,3 +1,19 @@
 .manage-work-history {
-  
+  &__title {
+    text-align: center;
+  }
+
+  &__li {
+    margin-bottom: rem(50);
+  }
+
+  &__box {
+    max-width: rem(600);
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
 }
