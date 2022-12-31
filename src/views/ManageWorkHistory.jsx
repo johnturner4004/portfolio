@@ -54,6 +54,11 @@ export default function ManageWorkHistory() {
     }
   }
 
+  const handleDelete = (e) => {
+    const id = e.target.dataset.id;
+    dispatch({ type: 'DELETE_WORK_HISTORY', payload: id });
+  }
+
   return (
     <div className='manage-work-history'>
       <h1 className='manage-work-history__title'>Manage Work History</h1>
@@ -86,7 +91,7 @@ export default function ManageWorkHistory() {
                     </FormControl>
                     <FormControl className='manage-work-history__row' fullWidth sx={{ mx: 'auto', display: 'flex', flexDirection: 'row' }}>
                       <Button variant='contained' sx={{ mr: 1, mt: 1, p: 2, width: '50%' }} data-id={job._id} onClick={handleSubmit}>Submit Change</Button>
-                      <Button variant='contained' color='error' sx={{ mt: 1, p: 2, width: '50%' }}>Delete</Button>
+                      <Button variant='contained' color='error' sx={{ mt: 1, p: 2, width: '50%' }} data-id={job._id} onClick={handleDelete}>Delete</Button>
                     </FormControl>
                   </Box>
                 </li>

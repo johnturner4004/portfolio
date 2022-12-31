@@ -52,12 +52,24 @@ router.post('/new', async (req, res) => {
   }
 })
 
-router.put('/update', (req, res) => {
+router.put('/update', async (req, res) => {
   try {
-    console.log(req.body);
+    const change = req.body;
+    const response = await Job.findByIdAndUpdate(change.id, change.update);
+    // console.dir(req, {maxArrayLength: null, depth: null});
+    console.log(response)
+    // console.log(change.id, change.update);
+    res.sendStatus(200);
   } catch (err) {
     console.error(err, 'Unable to update db');
   }
-})
+});
+
+router.delete('/delete/:id', async (req,res) => {
+  const id = req.params.id;
+  const result = await Job.deleteOne({ _id: id });
+  console.log(result);
+  res.sendStatus(200);
+});
 
 module.exports = router;

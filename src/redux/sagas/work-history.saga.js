@@ -29,8 +29,16 @@ function* updateWorkHistory(action) {
   }
 }
 
+function* deleteWorkHistory(action) {
+  const id = action.payload;
+  let response = yield axios.delete(`/api/work-history/delete/${id}`);
+  console.log(response.status);
+  yield put({ type: 'GET_WORK_HISTORY' });
+}
+
 export default function* workHistory() {
   yield takeLatest('GET_WORK_HISTORY', getWorkHistory);
   yield takeLatest('NEW_WORK_HISTORY', newWorkHistory);
   yield takeLatest('UPDATE_WORK_HISTORY', updateWorkHistory);
+  yield takeLatest('DELETE_WORK_HISTORY', deleteWorkHistory);
 };
