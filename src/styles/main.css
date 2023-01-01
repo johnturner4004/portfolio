@@ -208,7 +208,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   height: 2.5rem;
 }
 .nav-bar__name:hover, .nav-bar__button:hover {
-  background-color: #444;
+  background-color: rgba(68, 68, 68, 0.3764705882);
 }
 .nav-bar__button {
   font-size: 1.5rem;
