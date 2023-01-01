@@ -1,0 +1,29 @@
+.nav-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background-color: #fff;
+  box-shadow: 0 5px 10px #222;
+  padding-left: rem(50);
+
+  &__name,
+  &__button {
+    text-decoration: none;
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: inset 0 0 15px 15px #fff;
+    border: none;
+    font-size: rem(16);
+    height: rem(40);
+    
+    &:hover {
+      background-color: #444;
+    }
+  }
+
+  &__button {
+    font-size: rem(24);
+  }
+}

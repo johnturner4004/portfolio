@@ -19,6 +19,7 @@ import Education from './views/Education'
 import WorkHistory from './views/WorkHistory';
 import NewWorkHistory from './views/NewWorkHistory';
 import ManageWorkHistory from './views/ManageWorkHistory';
+import NavBar from './components/NavBar';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -51,13 +52,13 @@ const router = createBrowserRouter([
     element: <NewWorkHistory />
   },
   {
+    path: 'work-history/manage',
+    element: <ManageWorkHistory />
+  },
+  {
     path: 'education',
     element: <Education />
   },
-  {
-    path: 'work-history/manage',
-    element: <ManageWorkHistory />
-  }
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
