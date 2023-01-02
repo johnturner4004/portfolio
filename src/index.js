@@ -15,11 +15,12 @@ import './styles/main.css'
 
 import Home from './views/Home';
 import Error from './views/Error';
-import Education from './views/Education'
 import WorkHistory from './views/WorkHistory';
 import NewWorkHistory from './views/NewWorkHistory';
 import ManageWorkHistory from './views/ManageWorkHistory';
-import NavBar from './components/NavBar';
+import Education from './views/Education';
+import NewEducation from './views/NewEducation';
+import ManageEducation from './views/ManageEducation';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -58,6 +59,14 @@ const router = createBrowserRouter([
   {
     path: 'education',
     element: <Education />
+  },
+  {
+    path: 'education/new',
+    element: <NewEducation />
+  },
+  {
+    path: 'education/manage',
+    element: <ManageEducation />
   },
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));

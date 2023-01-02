@@ -8,13 +8,35 @@
   src: url('../assets/fonts/Chalktastic-x1nR.ttf');
 }
 
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeOutOpacity {
+  100% {
+    opacity: 1;
+	}
+  0% {
+    opacity: 0;
+  }
+}
+
+$tablet-breakpoint: 768px;
+$phone-breakpoint: 614px;
 
 @import './default';
 @import './_home';
 @import './_name';
 @import './_skill';
 @import './_work-history';
-@import './new-work-history';
-@import './manage-work-history';
+@import './_new-work-history';
+@import './_manage-work-history';
 @import './_education';
-@import './nav-bar'
+@import './_new-education';
+@import './_manage-education';
+@import './nav-bar';

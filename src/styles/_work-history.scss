@@ -12,6 +12,12 @@
   font-family: 'Share Tech Mono', monospace;
   position: relative;
 
+  @media (max-width: $phone-breakpoint) {
+    width: calc(100vw - rem(32));
+    height: calc(100vh - rem(32));
+    padding: rem(16);
+  }
+
   &__monitor {
     border-width: rem(15);
     border-color: #7a715e;
@@ -36,6 +42,10 @@
 
   &__company {
     font-size: rem(60);
+
+    @media (max-width: $phone-breakpoint) {
+      font-size: rem(48);
+    }
   }
 
   &__list {
@@ -45,8 +55,17 @@
     width: 100%;
     list-style: none;
 
+    @media (max-width: $tablet-breakpoint) {
+      flex-direction: column;
+    }
+
     &-entry {
       width: 50%;
+      padding-bottom: rem(16);
+
+      @media (max-width: $tablet-breakpoint) {
+        width: 100%;
+      }
     }
 
     &-company {

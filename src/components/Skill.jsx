@@ -5,8 +5,8 @@ export default function Skill() {
         <div className='skill__page-inner'>
           <h2>Things I do:</h2>
           <ul className='skill__list'>
-            <li className='skill__list-item'><span className='skill__line'></span>Make awesome web sites<span className='skill__line'></span></li>
-            <li className='skill__list-item'>Develope cool apps<span className='skill__line'></span></li>
+            <li className='skill__list-item'><span className='skill__line'></span>Make awesome websites<span className='skill__line'></span></li>
+            <li className='skill__list-item'>Develop cool apps<span className='skill__line'></span></li>
             <li className='skill__list-item'>Design fun games<span className='skill__line'></span></li>
             <li className='skill__list-item'>Make 3d Models<span className='skill__line'></span></li>
             <li className='skill__list-item'>Read comic books<span className='skill__line'></span></li>
@@ -26,7 +26,7 @@ export default function Skill() {
             <li className='skill__list-item skill__list-item-2'>C#<span className='skill__line'></span></li>
             <li className='skill__list-item skill__list-item-2'>Java</li>
             <li className='skill__list-item skill__list-item-2'>Python<span className='skill__line'></span></li>
-            <li className='skill__list-item skill__list-item-2'>Postgress</li>
+            <li className='skill__list-item skill__list-item-2'>PostgreSQL</li>
             <li className='skill__list-item skill__list-item-2'>Blender<span className='skill__line'></span></li>
           </ul>
         </div>

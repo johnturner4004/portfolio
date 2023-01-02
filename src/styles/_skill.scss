@@ -1,5 +1,9 @@
 .skill {
   width: 50vw;
+  
+  @media (max-width: $phone-breakpoint) {
+    width: 100vw;
+  }
 
   &__page {
     background-color: #eef;
@@ -40,5 +44,9 @@
     width: 50vw;
     border-bottom: 1px solid #98b0b8;
     line-height: rem(50);
+
+    @media (max-width: $phone-breakpoint) {
+      width: 100vw;
+    }
   }
 }

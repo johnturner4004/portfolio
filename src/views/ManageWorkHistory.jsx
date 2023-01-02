@@ -27,7 +27,6 @@ export default function ManageWorkHistory() {
         tempChange[e.target.id][e.target.name] = e.target.value
       }
     } else {
-      // default:
       if (e.target.name === 'job_description') {
         setChange({
           ...change,
@@ -43,9 +42,6 @@ export default function ManageWorkHistory() {
         })
       }
     }
-    console.log(change);
-    //   break;
-    // }
   }
 
   const handleSubmit = (e) => {
