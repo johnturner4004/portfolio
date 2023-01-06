@@ -29,7 +29,7 @@
 $tablet-breakpoint: 768px;
 $phone-breakpoint: 614px;
 
-@import './default';
+@import './_default';
 @import './_home';
 @import './_name';
 @import './_skill';
@@ -39,4 +39,5 @@ $phone-breakpoint: 614px;
 @import './_education';
 @import './_new-education';
 @import './_manage-education';
-@import './nav-bar';
+@import './_nav-bar';
+@import './_about';

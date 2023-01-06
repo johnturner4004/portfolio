@@ -22,11 +22,13 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const workHistory = require('./routes/work-history.router')
+const workHistory = require('./routes/work-history.router');
 const education = require('./routes/education.router');
+const user = require('./routes/user.router');
 
-app.use('/api/work-history', workHistory)
+app.use('/api/work-history', workHistory);
 app.use('/api/education', education);
+app.use('/api/user', user);
 
 app.use(express.static('build'));
 

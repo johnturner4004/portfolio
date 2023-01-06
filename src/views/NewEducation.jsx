@@ -15,8 +15,6 @@ export default function NewEducation() {
   const [count, setCount] = useState(0);
 
   const submit = (e) => {
-    console.log('submit')
-    console.log(formState)
     if (formState.school && formState.start_date && formState.major && formState.education_description) {
       dispatch({ type: 'NEW_EDUCATION', payload: formState })
       setCount(count + 1);

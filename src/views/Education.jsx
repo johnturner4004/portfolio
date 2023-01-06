@@ -9,8 +9,7 @@ export default function Education() {
 
   useEffect(() => {
     dispatch({ type: 'GET_EDUCATION' })
-  }, []);
-  console.log(education);
+  }, [dispatch]);
 
   return (
     <div>

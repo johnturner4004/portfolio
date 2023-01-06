@@ -55,7 +55,6 @@ router.put('/update', async (req, res) => {
   try {
     const change = req.body;
     const response = await School.findByIdAndUpdate(change.id, change.update);
-    console.log(response)
     res.sendStatus(200);
   } catch (err) {
     console.error(err, 'Unable to update db');
@@ -65,7 +64,6 @@ router.put('/update', async (req, res) => {
 router.delete('/delete/:id', async (req,res) => {
   const id = req.params.id;
   const result = await School.deleteOne({ _id: id });
-  console.log(result);
   res.sendStatus(200);
 });
 

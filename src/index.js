@@ -21,6 +21,8 @@ import ManageWorkHistory from './views/ManageWorkHistory';
 import Education from './views/Education';
 import NewEducation from './views/NewEducation';
 import ManageEducation from './views/ManageEducation';
+import About from './views/About';
+import Login from './views/Login';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -68,6 +70,14 @@ const router = createBrowserRouter([
     path: 'education/manage',
     element: <ManageEducation />
   },
+  {
+    path: 'about',
+    element: <About />
+  },
+  {
+    path: 'login',
+    element: <Login />
+  }
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

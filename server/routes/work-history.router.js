@@ -16,7 +16,7 @@ const Job = mongoose.model('Job', jobSchema)
 router.get('/', async (req, res) => {
   try {
     const workHistory = await Job.find();
-    workHistory.sort((a,b) => {
+    workHistory.sort((a, b) => {
       return b.start_date - a.start_date;
     })
     if (!workHistory.end_date) {
@@ -30,7 +30,6 @@ router.get('/', async (req, res) => {
 
 router.post('/new', async (req, res) => {
   try {
-    console.log('request body: ', req.body);
     const input = req.body;
     const job = new Job({
       company: input.company,
@@ -39,7 +38,7 @@ router.post('/new', async (req, res) => {
       job_title: input.job_title,
       job_description: input.job_description
     })
-    
+
     job
       .save()
       .then(
@@ -56,19 +55,15 @@ router.put('/update', async (req, res) => {
   try {
     const change = req.body;
     const response = await Job.findByIdAndUpdate(change.id, change.update);
-    // console.dir(req, {maxArrayLength: null, depth: null});
-    console.log(response)
-    // console.log(change.id, change.update);
     res.sendStatus(200);
   } catch (err) {
     console.error(err, 'Unable to update db');
   }
 });
 
-router.delete('/delete/:id', async (req,res) => {
+router.delete('/delete/:id', async (req, res) => {
   const id = req.params.id;
   const result = await Job.deleteOne({ _id: id });
-  console.log(result);
   res.sendStatus(200);
 });
 

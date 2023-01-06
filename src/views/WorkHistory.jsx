@@ -6,11 +6,10 @@ import NavBar from "../components/NavBar";
 export default function WorkHistory() {
   const dispatch = useDispatch();
   const workHistory = useSelector(store => store.workHistory);
-  console.log(workHistory);
 
   useEffect(() => {
     dispatch({ type: 'GET_WORK_HISTORY' })
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>

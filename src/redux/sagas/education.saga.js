@@ -7,7 +7,7 @@ function* getEducation(action) {
     yield put({ type: 'SET_EDUCATION', payload: education });
   } catch (err) {
     console.error(err);
-    console.log('Unable to get education');
+    console.error('Unable to get education');
   }
 };
 
@@ -32,7 +32,6 @@ function* updateEducation(action) {
 function* deleteEducation(action) {
   const id = action.payload;
   let response = yield axios.delete(`/api/education/delete/${id}`);
-  console.log(response.status);
   yield put({ type: 'GET_EDUCATION' });
 }
 

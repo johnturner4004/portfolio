@@ -21,13 +21,13 @@ export default function ManageEducation() {
   const handleChange = (e) => {
     let tempChange = change
     if (change && change[e.target.id]) {
-      if (e.target.name === 'school_description') {
-        tempChange[e.target.id].school_description = e.target.value.split('; ');
+      if (e.target.name === 'education_description') {
+        tempChange[e.target.id].education_description = e.target.value.split('; ');
       } else {
         tempChange[e.target.id][e.target.name] = e.target.value
       }
     } else {
-      if (e.target.name === 'school_description') {
+      if (e.target.name === 'education_description') {
         setChange({
           ...change,
           [e.target.id]: { [e.target.name]: e.target.value.split('; ') }
@@ -79,7 +79,7 @@ export default function ManageEducation() {
                       <FilledInput
                         multiline
                         name="education_description"
-                        defaultValue={school.education_description.map(entry => `${entry}; `)}
+                        defaultValue={school.education_description.map(entry => `${entry}`)}
                         variant="filled"
                         inputProps={{ 'id': `${school._id}` }}
                         onChange={handleChange}

@@ -15,13 +15,9 @@ export default function NewWorkHistory() {
   const [count, setCount] = useState(0);
 
   const submit = (e) => {
-    console.log('submit')
-    console.log(formState)
     if (formState.company && formState.start_date && formState.job_title && formState.job_description) {
       dispatch({ type: 'NEW_WORK_HISTORY', payload: formState })
       setCount(count + 1);
-
-      // console.log(formState);
     } else {
       console.log('All fields are required')
     }

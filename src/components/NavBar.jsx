@@ -21,6 +21,7 @@ export default function NavBar() {
         <button className='nav-bar__name' onClick={() => goTo('/')}><h1>John Turner</h1></button>
         <button className="nav-bar__button" onClick={() => goTo('/work-history')}>Work History</button>
         <button className="nav-bar__button" onClick={() => goTo('/education')}>Education</button>
+        <button className="nav-bar__button" onClick={() => goTo('/about')}>About</button>
       </div>
     </div>
   )
