@@ -50,34 +50,34 @@ const router = createBrowserRouter([
     path: 'work-history',
     element: <WorkHistory />
   },
-  {
-    path: 'work-history/new',
-    element: <NewWorkHistory />
-  },
-  {
-    path: 'work-history/manage',
-    element: <ManageWorkHistory />
-  },
+  // {
+  //   path: 'work-history/new',
+  //   element: <NewWorkHistory />
+  // },
+  // {
+  //   path: 'work-history/manage',
+  //   element: <ManageWorkHistory />
+  // },
   {
     path: 'education',
     element: <Education />
   },
-  {
-    path: 'education/new',
-    element: <NewEducation />
-  },
-  {
-    path: 'education/manage',
-    element: <ManageEducation />
-  },
+  // {
+  //   path: 'education/new',
+  //   element: <NewEducation />
+  // },
+  // {
+  //   path: 'education/manage',
+  //   element: <ManageEducation />
+  // },
   {
     path: 'about',
     element: <About />
   },
-  {
-    path: 'login',
-    element: <Login />
-  }
+  // {
+  //   path: 'login',
+  //   element: <Login />
+  // }
 ])
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

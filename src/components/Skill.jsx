@@ -28,6 +28,8 @@ export default function Skill() {
             <li className='skill__list-item skill__list-item-2'>Python<span className='skill__line'></span></li>
             <li className='skill__list-item skill__list-item-2'>PostgreSQL</li>
             <li className='skill__list-item skill__list-item-2'>Blender<span className='skill__line'></span></li>
+            <li className='skill__list-item skill__list-item-2'>Mongoose<span className='skill__line'></span></li>
+            <li className='skill__list-item skill__list-item-2'>MongoDB<span className='skill__line'></span></li>
           </ul>
         </div>
       </div>
