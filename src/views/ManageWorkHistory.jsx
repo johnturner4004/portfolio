@@ -60,7 +60,7 @@ export default function ManageWorkHistory() {
       <h1 className='manage-work-history__title'>Manage Work History</h1>
       <ul>
         {
-          workHistory.data && workHistory.data.length > 0 ?
+          workHistory.data && workHistory.data.length > 0 && Array.isArray(workHistory) ?
             workHistory.data.map(job => {
 
               return (
