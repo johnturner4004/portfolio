@@ -44,11 +44,19 @@ const router = createBrowserRouter([
     element: <Home />,
     errorElement: <Error />,
     children: [
+      {
+        path: 'work-history',
+        element: <WorkHistory />
+      },
+      {
+        path: 'education',
+        element: <Education />
+      },
+      {
+        path: 'about',
+        element: <About />
+      },
     ]
-  },
-  {
-    path: 'work-history',
-    element: <WorkHistory />
   },
   // {
   //   path: 'work-history/new',
@@ -58,10 +66,6 @@ const router = createBrowserRouter([
   //   path: 'work-history/manage',
   //   element: <ManageWorkHistory />
   // },
-  {
-    path: 'education',
-    element: <Education />
-  },
   // {
   //   path: 'education/new',
   //   element: <NewEducation />
@@ -70,10 +74,6 @@ const router = createBrowserRouter([
   //   path: 'education/manage',
   //   element: <ManageEducation />
   // },
-  {
-    path: 'about',
-    element: <About />
-  },
   // {
   //   path: 'login',
   //   element: <Login />
