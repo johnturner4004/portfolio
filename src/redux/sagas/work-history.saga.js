@@ -3,7 +3,7 @@ import { put, takeLatest } from "redux-saga/effects";
 
 function* getWorkHistory(action) {
   try {
-    const history = yield axios.get('/api/work-history');
+    const history = yield axios.get('http://192.81.218.30:5000/api/work-history');
     yield put({ type: 'SET_WORK_HISTORY', payload: history });
   } catch (err) {
     console.error(err);
@@ -14,7 +14,7 @@ function* getWorkHistory(action) {
 function* newWorkHistory(action) {
   try {
     const newEntry = action.payload;
-    yield axios.post('/api/work-history/new', newEntry);
+    yield axios.post('http://192.81.218.30:5000/api/work-history/new', newEntry);
   } catch (err) {
     console.error(err, 'Error adding new job to work-history');
   }
@@ -23,7 +23,7 @@ function* newWorkHistory(action) {
 function* updateWorkHistory(action) {
   try {
     const update = action.payload;
-    yield axios.put('/api/work-history/update', update);
+    yield axios.put('http://192.81.218.30:5000/api/work-history/update', update);
   } catch (err) {
     console.error(err, 'Error while updating work history');
   }
@@ -31,7 +31,7 @@ function* updateWorkHistory(action) {
 
 function* deleteWorkHistory(action) {
   const id = action.payload;
-  let response = yield axios.delete(`/api/work-history/delete/${id}`);
+  let response = yield axios.delete(`http://192.81.218.30:5000/api/work-history/delete/${id}`);
   console.log(response.status);
   yield put({ type: 'GET_WORK_HISTORY' });
 }
