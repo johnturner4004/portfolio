@@ -26,9 +26,10 @@ export default function WorkHistory() {
                     <p className="work-history__list-date">{moment(entry.start_date).format('MMM YYYY')} - {moment(entry.end_date).format('MMM YYYY')}</p>
                     <p className="work-history__list-title">{entry.job_title}</p>
                     <ul>
-                      {entry.job_description ? entry.job_description.map(item => {
+                      {entry.job_description ? entry.job_description.map((item, i)=> {
+                        i ? i++ : i=0;
                         return (
-                          <li className="work-history__list-description">{item}</li>
+                          <li key={i} className="work-history__list-description">{item}</li>
                         )
                       }) : ''}
                     </ul>

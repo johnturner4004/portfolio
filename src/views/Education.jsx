@@ -24,9 +24,10 @@ export default function Education() {
                 <p className="education__list-date">{moment(entry.start_date).format('MMM YYYY')} - {moment(entry.end_date).format('MMM YYYY')}</p>
                 <p className="education__list-title">{entry.major}</p>
                 <ul>
-                  {entry.education_description ? entry.education_description.map(item => {
+                  {entry.education_description ? entry.education_description.map((item, i) => {
+                    i ? i++ : i = 0;
                     return (
-                      <li className="education__list-description">{item}</li>
+                      <li key={i} className="education__list-description">{item}</li>
                     )
                   }) : ''}
                 </ul>
