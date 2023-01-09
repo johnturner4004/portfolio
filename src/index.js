@@ -4,7 +4,7 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
-import logger from 'redux-logger';
+// import logger from 'redux-logger';
 import { configureStore } from '@reduxjs/toolkit'
 
 import rootReducer from './redux/reducers/_root.reducer';
@@ -16,19 +16,19 @@ import './styles/main.css'
 import Home from './views/Home';
 import Error from './views/Error';
 import WorkHistory from './views/WorkHistory';
-import NewWorkHistory from './views/NewWorkHistory';
-import ManageWorkHistory from './views/ManageWorkHistory';
+// import NewWorkHistory from './views/NewWorkHistory';
+// import ManageWorkHistory from './views/ManageWorkHistory';
 import Education from './views/Education';
-import NewEducation from './views/NewEducation';
-import ManageEducation from './views/ManageEducation';
+// import NewEducation from './views/NewEducation';
+// import ManageEducation from './views/ManageEducation';
 import About from './views/About';
-import Login from './views/Login';
+// import Login from './views/Login';
 
 const sagaMiddleware = createSagaMiddleware();
 
 
 const middlewareList = process.env.NODE_ENV ?
-[sagaMiddleware, logger] :
+[sagaMiddleware] :
 [sagaMiddleware];
 
 const store = configureStore({
