@@ -1,0 +1,46 @@
+.name-card {
+  box-shadow: rem(5) rem(5) rem(15) #000;
+  border-radius: rem(15);
+  padding: rem(30);
+  margin: rem(30) rem(30) rem(30) rem(90);
+  z-index: 1;
+
+  &__info {
+    border-bottom: 1px solid #222;
+    font-family: 'Gochi Hand', cursive;
+    font-size: rem(18);
+  }
+
+  &__label {
+    font-size: rem(10);
+  }
+
+  &__holes {
+    position: relative;
+    padding-top: rem(30);
+    &:before {
+      content: "";
+      box-shadow: inset rem(5) rem(5) rem(15) #000;
+      height: rem(30);
+      width: rem(30);
+      border-radius: 50%;
+      background-color: #fff;
+      z-index: 2;
+      position: absolute;
+      bottom: rem(-10);
+      left: 35%;
+    }
+    &:after {
+      content: "";
+      box-shadow: inset rem(5) rem(5) rem(15) #000;
+      height: rem(30);
+      width: rem(30);
+      border-radius: 50%;
+      background-color: #fff;
+      z-index: 2;
+      position: absolute;
+      bottom: rem(-10);
+      right: 35%;
+    }
+  }
+}

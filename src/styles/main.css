@@ -75,6 +75,50 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   padding: 3.125rem;
 }
 
+.name-card {
+  box-shadow: 0.3125rem 0.3125rem 0.9375rem #000;
+  border-radius: 0.9375rem;
+  padding: 1.875rem;
+  margin: 1.875rem 1.875rem 1.875rem 5.625rem;
+  z-index: 1;
+}
+.name-card__info {
+  border-bottom: 1px solid #222;
+  font-family: "Gochi Hand", cursive;
+  font-size: 1.125rem;
+}
+.name-card__label {
+  font-size: 0.625rem;
+}
+.name-card__holes {
+  position: relative;
+  padding-top: 1.875rem;
+}
+.name-card__holes:before {
+  content: "";
+  box-shadow: inset 0.3125rem 0.3125rem 0.9375rem #000;
+  height: 1.875rem;
+  width: 1.875rem;
+  border-radius: 50%;
+  background-color: #fff;
+  z-index: 2;
+  position: absolute;
+  bottom: -0.625rem;
+  left: 35%;
+}
+.name-card__holes:after {
+  content: "";
+  box-shadow: inset 0.3125rem 0.3125rem 0.9375rem #000;
+  height: 1.875rem;
+  width: 1.875rem;
+  border-radius: 50%;
+  background-color: #fff;
+  z-index: 2;
+  position: absolute;
+  bottom: -0.625rem;
+  right: 35%;
+}
+
 .skill {
   width: 50vw;
 }
