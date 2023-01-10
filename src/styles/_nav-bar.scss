@@ -40,6 +40,11 @@
     font-size: rem(24);
     border-left: 1px solid #444;
     margin: rem(10) 0;
+    padding: 0 rem(15);
+
+    @media (max-width: $tablet-breakpoint) {
+      font-size: rem(18);
+    }
 
     @media (max-width: $phone-breakpoint) {
       border: none;
@@ -48,6 +53,13 @@
 
   &__name {
     height: rem(40);
+    font-size: rem(36);
+    font-weight: 700;
+    padding-right: rem(15);
+
+    @media (max-width: $tablet-breakpoint) {
+      font-size: rem(24);
+    }
   }
 
   &__menu {

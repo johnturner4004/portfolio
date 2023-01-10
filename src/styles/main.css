@@ -385,6 +385,12 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   font-size: 1.5rem;
   border-left: 1px solid #444;
   margin: 0.625rem 0;
+  padding: 0 0.9375rem;
+}
+@media (max-width: 768px) {
+  .nav-bar__button {
+    font-size: 1.125rem;
+  }
 }
 @media (max-width: 614px) {
   .nav-bar__button {
@@ -393,6 +399,14 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 }
 .nav-bar__name {
   height: 2.5rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+  padding-right: 0.9375rem;
+}
+@media (max-width: 768px) {
+  .nav-bar__name {
+    font-size: 1.5rem;
+  }
 }
 @media (max-width: 614px) {
   .nav-bar__menu {
