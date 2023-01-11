@@ -254,6 +254,9 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   margin-right: 1rem;
   font-size: 1.25rem;
 }
+.work-history__project ul > li {
+  margin-left: 1.5rem;
+}
 
 .new-work-history {
   padding: 3.125rem;

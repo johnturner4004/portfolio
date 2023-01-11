@@ -83,4 +83,10 @@
       font-size: rem(20);
     }
   }
+
+  &__project {
+    ul > li {
+      margin-left: rem(24);
+    }
+  }
 }

@@ -21,7 +21,7 @@ export default function WorkHistory() {
             <ul className="work-history__list">
               <li className="work-history__list-entry">
                 <h2 className="work-history__list-company">Media Junction</h2>
-                <p className="work-history__list-date">Oct 2021 - Dec 2022</p>
+                <p className="work-history__list-date">Oct 2021 - Present</p>
                 <p className="work-history__list-title">Full Stack Engineer</p>
                 <ul>
                   <li className="work-history__list-description">Developed webpage templates in HubSpot for clients using HubL, HTML, SCSS, CSS, JavaScript, and jQuery</li>
@@ -33,7 +33,22 @@ export default function WorkHistory() {
                 <h2 className="work-history__list-company">Prime Digital Academy</h2>
                 <p className="work-history__list-date">Feb 2021 - Jul 2021</p>
                 <p className="work-history__list-title">Full Stack Engineer (student)</p>
-                <ul>
+                <ul className="work-history__project">
+                  <li className="work-history__list-description">
+                    Solo Project: Team zero Gaming app
+                    <ul>
+                      <li>App where members and fans of the Team zero Gaming esports team can schedule events and play times, confirm whether of not they will be playing, and see a list of who all is playing. A player who added an event or play time can also edit or delete that event.</li>
+                      <li>Technologies used Material-Ui, React, JavaScript, HTML, Redux, Express, Node.js, PostgreSQL</li>
+                    </ul>
+                  </li>
+                  <li className="work-history__list-description">
+                    Group Project: Our Economic Lives
+                    <ul>
+                      <li>The goal of this project is to help individuals either advance further in their chosen career path, or get started working towards a new path. The central element of the app is their industry pyramid which is made up of various tiers. Each tier is composed of building block that will have a description, some examples, and a place for them to enter personal examples of how they possess that trait.</li>
+                      <li>My primary role in this project was making the pyramid and linking it to the data in the database. When a user selects a tier, the user is then presented with a set of links for each building block in that tier. When they select a building block it will take them to blocks page and display any info they have already input.</li>
+                      <li>Technologies used Material-Ui, React, JavaScript, HTML, Redux, Express, Node.js, PostgreSQL</li>
+                    </ul>
+                  </li>
                 </ul>
               </li>
               <li className="work-history__list-entry">
@@ -106,7 +121,7 @@ export default function WorkHistory() {
             </ul>
           </div>
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   )
 }
