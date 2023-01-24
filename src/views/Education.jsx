@@ -1,11 +1,9 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux"
-// import moment from "moment/moment";
 import NavBar from "../components/NavBar";
 
 export default function Education() {
   const dispatch = useDispatch();
-  // const education = useSelector(store => store.education);
 
   useEffect(() => {
     dispatch({ type: 'GET_EDUCATION' })
