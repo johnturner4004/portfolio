@@ -1,11 +1,9 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux"
-// import moment from "moment/moment";
 import NavBar from "../components/NavBar";
 
 export default function WorkHistory() {
   const dispatch = useDispatch();
-  // const workHistory = useSelector(store => store.workHistory);
 
   useEffect(() => {
     dispatch({ type: 'GET_WORK_HISTORY' })
