@@ -23,6 +23,7 @@ import Education from './views/Education';
 // import ManageEducation from './views/ManageEducation';
 import About from './views/About';
 // import Login from './views/Login';
+import Sample from './views/Sample';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
   {
     path: 'education',
     element: <Education />
+  },
+  {
+    path: 'sample',
+    element: <Sample />
   },
   {
     path: 'about',
