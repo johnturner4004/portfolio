@@ -24,6 +24,7 @@ import Education from './views/Education';
 import About from './views/About';
 // import Login from './views/Login';
 import Sample from './views/Sample';
+import Mortgage from './views/Mortgage';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -57,7 +58,11 @@ const router = createBrowserRouter([
   },
   {
     path: 'sample',
-    element: <Sample />
+    element: <Sample />,
+  },
+  {
+    path: 'sample/mortgage',
+    element: <Mortgage />
   },
   {
     path: 'about',
