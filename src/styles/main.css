@@ -498,6 +498,9 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   color: #eee;
   width: fit-content;
 }
+.mortgage-empty__small {
+  color: #eee;
+}
 .mortgage-payment {
   color: #eee;
   font-weight: 700;
@@ -505,4 +508,9 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 }
 .mortgage-payment__amount {
   font-size: 4.5rem;
+}
+.mortgage-total {
+  color: #eee;
+  font-weight: 700;
+  font-size: 4rem;
 }/*# sourceMappingURL=main.css.map */

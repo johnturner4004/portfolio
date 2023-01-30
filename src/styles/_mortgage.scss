@@ -35,6 +35,10 @@
     font-weight: 700;
     color: #eee;
     width: fit-content;
+
+    &__small {
+      color: #eee;
+    }
   }
   
   &-payment {
@@ -45,5 +49,11 @@
     &__amount {
       font-size: rem(72);
     }
+  }
+
+  &-total {
+    color: #eee;
+    font-weight: 700;
+    font-size: rem(64);
   }
 }
