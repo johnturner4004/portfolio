@@ -1,9 +1,17 @@
 .mortgage {
   padding-top: rem(100);
   padding-left: rem(100);
+  padding-right: rem(100);
+
+  &-calculator {
+    background-color: #1976d2;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
 
   &-input {
-    max-width: rem(600);
+    width: 60%;
     background-color: #eee;
     padding: rem(50);
 
@@ -12,5 +20,20 @@
       justify-content: space-between;
       align-items: center;
     }
+  }
+
+  &-output {
+    width: 40%;
+    padding: rem(50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-empty {
+    font-size: rem(48);
+    font-weight: 700;
+    color: #eee;
+    width: fit-content;
   }
 }

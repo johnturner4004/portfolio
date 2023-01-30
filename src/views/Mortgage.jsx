@@ -1,10 +1,12 @@
 import NavBar from "../components/NavBar";
 import TextField from "@mui/material/TextField";
+import Button from '@mui/material/Button';
 import { useState } from "react";
 import currency from "currency.js";
 
 export default function Mortgage() {
   const [formState, setFormState] = useState({});
+  const [output, setOutput] = useState('empty')
 
   const handleChange = async (e) => {
     switch (e.target.name) {
@@ -31,6 +33,10 @@ export default function Mortgage() {
     }
   }
 
+  const handleClick = () => {
+    console.log('Click');
+  }
+
   return (
     <div className="mortgage">
       <NavBar />
@@ -46,9 +52,15 @@ export default function Mortgage() {
             <TextField name="term" label="Term (in years)" onChange={handleChange} onBlur={formatCurrency} />
             <TextField name="interest" label="Interest" onChange={handleChange} onBlur={formatCurrency} />
           </div>
+          <br />
+          <Button name="calculate" onClick={handleClick} variant="contained">Calculate</Button>
         </div>
         <div className="mortgage-output">
-
+          {
+            output === 'empty' ?
+              <span className="mortgage-empty">Find your monthly payment</span>
+              : ''
+          }
         </div>
       </div>
     </div>

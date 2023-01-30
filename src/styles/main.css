@@ -467,9 +467,16 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 .mortgage {
   padding-top: 6.25rem;
   padding-left: 6.25rem;
+  padding-right: 6.25rem;
+}
+.mortgage-calculator {
+  background-color: #1976d2;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 .mortgage-input {
-  max-width: 37.5rem;
+  width: 60%;
   background-color: #eee;
   padding: 3.125rem;
 }
@@ -477,4 +484,17 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.mortgage-output {
+  width: 40%;
+  padding: 3.125rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mortgage-empty {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #eee;
+  width: fit-content;
 }/*# sourceMappingURL=main.css.map */
