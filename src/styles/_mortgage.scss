@@ -1,3 +1,16 @@
 .mortgage {
-  padding-top: rem(50);
+  padding-top: rem(100);
+  padding-left: rem(100);
+
+  &-input {
+    max-width: rem(600);
+    background-color: #eee;
+    padding: rem(50);
+
+    &__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
 }

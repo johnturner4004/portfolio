@@ -465,5 +465,16 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 }
 
 .mortgage {
-  padding-top: 3.125rem;
+  padding-top: 6.25rem;
+  padding-left: 6.25rem;
+}
+.mortgage-input {
+  max-width: 37.5rem;
+  background-color: #eee;
+  padding: 3.125rem;
+}
+.mortgage-input__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }/*# sourceMappingURL=main.css.map */
