@@ -6,7 +6,7 @@ import currency from "currency.js";
 
 export default function Mortgage() {
   const [formState, setFormState] = useState({});
-  const [output, setOutput] = useState('empty')
+  const [output, setOutput] = useState('payment')
 
   const handleChange = async (e) => {
     switch (e.target.name) {
@@ -59,6 +59,8 @@ export default function Mortgage() {
           {
             output === 'empty' ?
               <span className="mortgage-empty">Find your monthly payment</span>
+              : output ==='payment' ?
+              <span className="mortgage-payment"><span className="mortgage-payment__amount">{currency(100).format()}</span><br />/month</span>
               : ''
           }
         </div>

@@ -36,4 +36,14 @@
     color: #eee;
     width: fit-content;
   }
+  
+  &-payment {
+    color: #eee;
+    font-weight: 700;
+    text-align: right;
+    
+    &__amount {
+      font-size: rem(72);
+    }
+  }
 }
