@@ -5,8 +5,11 @@ import { useState } from "react";
 import currency from "currency.js";
 
 export default function Mortgage() {
-  const [formState, setFormState] = useState({});
-  const [output, setOutput] = useState('total')
+  const [formState, setFormState] = useState({
+    amount: '',
+    payment: ''
+  });
+  const [output, setOutput] = useState('empty')
 
   const handleChange = async (e) => {
     switch (e.target.name) {
@@ -26,15 +29,44 @@ export default function Mortgage() {
   }
 
   const formatCurrency = e => {
-    if (e.target.value > 0) {
+    if (currency(e.target.value).format() !== '$0.00') {
       e.target.value = currency(e.target.value).format();
     } else {
       e.target.value = '';
+      setFormState({
+        ...formState,
+        [e.target.name]: ''
+      })
     }
   }
 
   const handleClick = () => {
     console.log('Click');
+    switch (true) {
+      case !formState.amount && !formState.payment:
+        console.error("No values entered");
+        break;
+      case !formState.term || !formState.interest:
+        console.error("Term and interest are required fields");
+        break;
+      case formState.amount !== '' && formState.payment !== '':
+        console.error("Only use amount or payment");
+        break;
+      case formState.amount !== '':
+        setFormState({
+          ...formState,
+          payment: null
+        })
+        console.log('amount input');
+        setOutput('payment');
+        break;
+      case formState.payment !== '':
+        console.log('payment input');
+        setOutput('amount');
+        break;
+      default:
+        console.error('Something went wrong');
+    }
   }
 
   return (
@@ -43,14 +75,14 @@ export default function Mortgage() {
       <div className="mortgage-calculator">
         <div className="mortgage-input">
           <div className="mortgage-input__row">
-            <TextField name="amount" label="Mortgage Amount" onChange={handleChange} onBlur={formatCurrency} />
+            <TextField id="amount" name="amount" label="Mortgage Amount" onChange={handleChange} onBlur={formatCurrency} />
             &nbsp; or &nbsp;
-            <TextField name="payment" label="Monthly Payment" onChange={handleChange} onBlur={formatCurrency} />
+            <TextField id="payment" name="payment" label="Monthly Payment" onChange={handleChange} onBlur={formatCurrency} />
           </div>
           <br />
           <div className="mortgage-input__row">
-            <TextField name="term" label="Term (in years)" onChange={handleChange} onBlur={formatCurrency} />
-            <TextField name="interest" label="Interest" onChange={handleChange} onBlur={formatCurrency} />
+            <TextField name="term" label="Term (in years)" onChange={handleChange} />
+            <TextField name="interest" label="Interest" onChange={handleChange} />
           </div>
           <br />
           <Button name="calculate" onClick={handleClick} variant="contained">Calculate</Button>
