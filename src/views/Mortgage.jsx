@@ -1,6 +1,7 @@
 import NavBar from "../components/NavBar";
 import TextField from "@mui/material/TextField";
 import Button from '@mui/material/Button';
+import Fade from '@mui/material/Fade';
 import { useState } from "react";
 import currency from "currency.js";
 
@@ -9,7 +10,8 @@ export default function Mortgage() {
     amount: '',
     payment: ''
   });
-  const [output, setOutput] = useState('empty')
+  const [output, setOutput] = useState('empty');
+  const [error, setError] = useState({ show: false });
 
   const handleChange = async (e) => {
     switch (e.target.name) {
@@ -44,13 +46,22 @@ export default function Mortgage() {
     console.log('Click');
     switch (true) {
       case !formState.amount && !formState.payment:
-        console.error("No values entered");
+        setError({
+          show: true,
+          message: 'No values entered',
+        })
         break;
       case !formState.term || !formState.interest:
-        console.error("Term and interest are required fields");
+        setError({
+          show: true,
+          message: 'Term and interest are required fields'
+        })
         break;
       case formState.amount !== '' && formState.payment !== '':
-        console.error("Only use amount or payment");
+        setError({
+          show: true,
+          message: 'Please only use amount or payment'
+        })
         break;
       case formState.amount !== '':
         setFormState({
@@ -62,15 +73,36 @@ export default function Mortgage() {
         break;
       case formState.payment !== '':
         console.log('payment input');
-        setOutput('amount');
+        setOutput('total');
         break;
       default:
         console.error('Something went wrong');
     }
   }
 
+  const errorClick = () => {
+    setError({
+      show: false,
+      message: '',
+    })
+  }
+
   return (
     <div className="mortgage">
+      {
+        error.show ?
+          <Fade in={error.show} timeout={500}>
+            <div className="mortgage-error__background">
+              <div className="mortgage-error__box">
+                <span className="mortgage-error__message">
+                  {error.message}
+                </span><br /><br />
+                <Button variant='contained' color="error" onClick={errorClick}>Ok</Button>
+              </div>
+            </div>
+          </Fade>
+          : ''
+      }
       <NavBar />
       <div className="mortgage-calculator">
         <div className="mortgage-input">

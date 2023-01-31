@@ -468,6 +468,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   padding-top: 6.25rem;
   padding-left: 6.25rem;
   padding-right: 6.25rem;
+  position: relative;
 }
 .mortgage-calculator {
   background-color: #1976d2;
@@ -513,4 +514,25 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   color: #eee;
   font-weight: 700;
   font-size: 4rem;
+}
+.mortgage-error__background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(119, 119, 119, 0.6);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mortgage-error__box {
+  background-color: #fff;
+  padding: 3.125rem;
+  text-align: center;
+  border-radius: 0.9375rem;
+}
+.mortgage-error__message {
+  font-size: 2rem;
 }/*# sourceMappingURL=main.css.map */

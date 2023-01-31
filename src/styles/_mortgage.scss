@@ -2,6 +2,7 @@
   padding-top: rem(100);
   padding-left: rem(100);
   padding-right: rem(100);
+  position: relative;
 
   &-calculator {
     background-color: #1976d2;
@@ -55,5 +56,31 @@
     color: #eee;
     font-weight: 700;
     font-size: rem(64);
+  }
+
+  &-error {
+    &__background {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #77777799;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__box {
+      background-color: #fff;
+      padding: rem(50);
+      text-align: center;
+      border-radius: rem(15);
+    }
+
+    &__message {
+      font-size: rem(32);
+    }
   }
 }
