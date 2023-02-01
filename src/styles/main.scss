@@ -1,5 +1,5 @@
 @function rem($val) {
-  @return #{$val / 16}rem;
+  @return #{calc($val / 16)}rem;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Share+Tech+Mono&display=swap');

@@ -366,7 +366,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
     padding: 0;
   }
 }
-.nav-bar__name, .nav-bar__button {
+.nav-bar a, .nav-bar__name, .nav-bar__button {
   text-decoration: none;
   color: #000;
   background-color: transparent;
@@ -375,11 +375,11 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   border: none;
   font-size: 1rem;
 }
-.nav-bar__name:hover, .nav-bar__button:hover {
+.nav-bar a:hover, .nav-bar__name:hover, .nav-bar__button:hover {
   background-color: rgba(68, 68, 68, 0.5019607843);
 }
 @media (max-width: 614px) {
-  .nav-bar__name, .nav-bar__button {
+  .nav-bar a, .nav-bar__name, .nav-bar__button {
     text-align: left;
     width: 100%;
   }
@@ -475,6 +475,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   display: flex;
   flex-direction: row;
   width: 100%;
+  position: relative;
 }
 .mortgage-input {
   width: 60%;
@@ -535,4 +536,22 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 }
 .mortgage-error__message {
   font-size: 2rem;
+}
+.mortgage-button {
+  position: absolute;
+  bottom: -36px;
+  left: calc(50% - 36px);
+}
+.mortgage-schedule__list {
+  list-style-type: none;
+}
+.mortgage-schedule__list-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 0.5rem;
+}
+.mortgage-schedule__list-item:nth-child(2n) {
+  background-color: #eee;
 }/*# sourceMappingURL=main.css.map */
