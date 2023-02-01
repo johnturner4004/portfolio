@@ -17,6 +17,7 @@ export default function NavBar() {
         <a href='/'><span className='nav-bar__name'>John Turner</span></a>
         <a href='/work-history'><span className="nav-bar__button">Work History</span></a>
         <a href='/education'><span className="nav-bar__button">Education</span></a>
+        <a href='/sample'><span className="nav-bar__button">Samples</span></a>
         <a href='/about'><span className="nav-bar__button">About</span></a>
       </div>
     </div>

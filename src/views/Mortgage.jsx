@@ -55,7 +55,9 @@ export default function Mortgage() {
     const n = formState.term * 12;
 
     let remainingBal, pmt;
-    setSchedule(schedule.length = 0);
+    if (schedule.length && schedule.length > 0) {
+      setSchedule(schedule.length = 0);
+    }
 
     console.log(P + ', ' + A + ', ' + i + ', ' + n);
     switch (true) {
@@ -65,6 +67,7 @@ export default function Mortgage() {
           show: true,
           message: 'No values entered',
         })
+        setOutput('empty');
         break;
       // Missing term and/or interest
       case !formState.term || !formState.interest:
@@ -72,6 +75,7 @@ export default function Mortgage() {
           show: true,
           message: 'Term and interest are required fields'
         })
+        setOutput('empty')
         break;
       // Used both amount and payment
       case formState.amount !== '' && formState.payment !== '':
@@ -79,6 +83,7 @@ export default function Mortgage() {
           show: true,
           message: 'Please only use amount or payment'
         })
+        setOutput('empty');
         break;
       // Calculate payment
       case formState.amount !== '':
@@ -152,6 +157,7 @@ export default function Mortgage() {
           </Fade>
           : ''
       }
+      <h1>Mortgage Calculator</h1>
       <div className="mortgage-calculator">
         <div className="mortgage-input">
           <div className="mortgage-input__row">
@@ -188,7 +194,7 @@ export default function Mortgage() {
         }
       </div>
       {
-        expand ?
+        expand && output !== 'empty' ?
           <Grow in={expand} style={{ transformOrigin: '0 0 0' }}>
             <div className="mortgage-schedule">
               <ul className="mortgage-schedule__list">
@@ -199,7 +205,6 @@ export default function Mortgage() {
                       <li className="mortgage-schedule__list-item" key={line.month}><span>{line.month}</span><span>{line.interest}</span><span>{line.principle}</span><span>{line.remaining}</span></li>
                     )
                   })
-                  // JSON.stringify(schedule)
                 }
               </ul>
             </div>

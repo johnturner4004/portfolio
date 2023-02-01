@@ -1,3 +1,44 @@
 .sample {
-  padding-top: rem(50);
+  padding: rem(100);
+  
+  &-page {
+    display: flex;
+    flex-wrap: wrap;
+
+    h2 {
+      text-align: center;
+    }
+
+    a {
+      width: calc(1440px * 0.25);
+    }
+  }
+}
+
+.thumbnail iframe {
+  width: 1440px;
+  height: 900px;
+  border: 1px solid #000;
+  box-shadow: 0 5px 10px #222;
+}
+
+.thumbnail {
+  position: relative;
+  -ms-zoom: 0.25;
+  -moz-transform: scale(0.25);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(0.25);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(0.25);
+  -webkit-transform-origin: 0 0;
+}
+
+.thumbnail:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }

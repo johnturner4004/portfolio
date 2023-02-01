@@ -10,6 +10,10 @@
     flex-direction: row;
     width: 100%;
     position: relative;
+
+    @media (max-width: $tablet-breakpoint) {
+      flex-direction: column;
+    }
   }
 
   &-input {
@@ -17,10 +21,22 @@
     background-color: #eee;
     padding: rem(50);
 
+    @media (max-width: $tablet-breakpoint) {
+      width: auto;
+    }
+
     &__row {
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      @media (max-width: $phone-breakpoint) {
+        flex-direction: column;
+
+        div {
+          margin: rem(5) 0;
+        }
+      }
     }
   }
 
@@ -30,6 +46,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: $tablet-breakpoint) {
+      width: auto;
+    }
   }
 
   &-empty {
@@ -42,12 +62,12 @@
       color: #eee;
     }
   }
-  
+
   &-payment {
     color: #eee;
     font-weight: 700;
     text-align: right;
-    
+
     &__amount {
       font-size: rem(72);
     }
@@ -89,10 +109,17 @@
     position: absolute;
     bottom: -36px;
     left: calc(50% - 36px);
-    
+
+    @media (max-width: $tablet-breakpoint) {
+      display: none !important;
+    }
   }
 
   &-schedule {
+    @media (max-width: $tablet-breakpoint) {
+      display: none;
+    }
+
     &__list {
       list-style-type: none;
 
