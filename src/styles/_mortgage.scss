@@ -4,6 +4,12 @@
   padding-right: rem(100);
   position: relative;
 
+  @media (max-width: $phone-breakpoint) {
+    padding-top: rem(75);
+    padding-left: rem(10);
+    padding-right: rem(10);
+  }
+
   &-calculator {
     background-color: #1976d2;
     display: flex;
@@ -23,6 +29,10 @@
 
     @media (max-width: $tablet-breakpoint) {
       width: auto;
+    }
+
+    @media(max-width: $phone-breakpoint) {
+      padding: rem(25);
     }
 
     &__row {
@@ -50,6 +60,10 @@
     @media (max-width: $tablet-breakpoint) {
       width: auto;
     }
+
+    @media (max-width: $phone-breakpoint) {
+      padding: rem(25);
+    }
   }
 
   &-empty {
@@ -70,6 +84,10 @@
 
     &__amount {
       font-size: rem(72);
+
+      @media (max-width: $phone-breakpoint) {
+        font-size: rem(56);
+      }
     }
   }
 
@@ -77,6 +95,10 @@
     color: #eee;
     font-weight: 700;
     font-size: rem(64);
+
+    @media (max-width: $phone-breakpoint) {
+      font-size: rem(48);
+    }
   }
 
   &-error {

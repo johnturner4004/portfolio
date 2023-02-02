@@ -511,6 +511,13 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   padding-right: 6.25rem;
   position: relative;
 }
+@media (max-width: 614px) {
+  .mortgage {
+    padding-top: 4.6875rem;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+  }
+}
 .mortgage-calculator {
   background-color: #1976d2;
   display: flex;
@@ -531,6 +538,11 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 @media (max-width: 768px) {
   .mortgage-input {
     width: auto;
+  }
+}
+@media (max-width: 614px) {
+  .mortgage-input {
+    padding: 1.5625rem;
   }
 }
 .mortgage-input__row {
@@ -558,6 +570,11 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
     width: auto;
   }
 }
+@media (max-width: 614px) {
+  .mortgage-output {
+    padding: 1.5625rem;
+  }
+}
 .mortgage-empty {
   font-size: 3rem;
   font-weight: 700;
@@ -575,10 +592,20 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 .mortgage-payment__amount {
   font-size: 4.5rem;
 }
+@media (max-width: 614px) {
+  .mortgage-payment__amount {
+    font-size: 3.5rem;
+  }
+}
 .mortgage-total {
   color: #eee;
   font-weight: 700;
   font-size: 4rem;
+}
+@media (max-width: 614px) {
+  .mortgage-total {
+    font-size: 3rem;
+  }
 }
 .mortgage-error__background {
   position: absolute;
