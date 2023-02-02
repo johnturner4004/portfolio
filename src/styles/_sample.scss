@@ -9,6 +9,10 @@
       text-align: left;
     }
   }
+
+  @media (max-width: $phone-breakpoint) {
+    padding: rem(75) rem(10) rem(10) rem(10);
+  }
 }
 
 .thumbnail iframe {
@@ -21,8 +25,11 @@
 .thumbnail {
   position: relative;
   cursor: pointer;
+  // zoom: 0.25;
   -ms-zoom: 0.25;
+  // transform: scale(0.25);
   -moz-transform: scale(0.25);
+  // transform-origin: 0 0;
   -moz-transform-origin: 0 0;
   -o-transform: scale(0.25);
   -o-transform-origin: 0 0;

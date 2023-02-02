@@ -470,6 +470,11 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 .sample-page h2 {
   text-align: left;
 }
+@media (max-width: 614px) {
+  .sample {
+    padding: 4.6875rem 0.625rem 0.625rem 0.625rem;
+  }
+}
 
 .thumbnail iframe {
   width: 1440px;
