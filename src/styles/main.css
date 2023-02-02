@@ -468,10 +468,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   flex-wrap: wrap;
 }
 .sample-page h2 {
-  text-align: center;
-}
-.sample-page a {
-  width: 360px;
+  text-align: left;
 }
 
 .thumbnail iframe {
@@ -483,6 +480,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 
 .thumbnail {
   position: relative;
+  cursor: pointer;
   -ms-zoom: 0.25;
   -moz-transform: scale(0.25);
   -moz-transform-origin: 0 0;

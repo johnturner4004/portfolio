@@ -6,11 +6,7 @@
     flex-wrap: wrap;
 
     h2 {
-      text-align: center;
-    }
-
-    a {
-      width: calc(1440px * 0.25);
+      text-align: left;
     }
   }
 }
@@ -24,6 +20,7 @@
 
 .thumbnail {
   position: relative;
+  cursor: pointer;
   -ms-zoom: 0.25;
   -moz-transform: scale(0.25);
   -moz-transform-origin: 0 0;
