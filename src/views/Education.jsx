@@ -1,19 +1,19 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux"
-import NavBar from "../components/NavBar";
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import NavBar from '../components/NavBar';
 
 export default function Education() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch({ type: 'GET_EDUCATION' })
+    dispatch({ type: 'GET_EDUCATION' });
   }, [dispatch]);
 
   return (
     <div>
       <NavBar />
-      <div className='education'>
-        <h1 className='education__title'>Education</h1>
+      <div className="education">
+        <h1 className="education__title">Education</h1>
         <ul className="education__list">
           <li className="education__list-entry">
             <h2 className="education__list-company">Prime Digital Academy</h2>
@@ -31,7 +31,7 @@ export default function Education() {
             <p className="education__list-date">Aug 2005 - May 2009</p>
             <p className="education__list-title">Secondary Education Math and Science</p>
             <ul>
-              <li className="education__list-description">Earned Bachelor's degree in 2009</li>
+              <li className="education__list-description">Earned Bachelor&apos;s degree in 2009</li>
             </ul>
           </li>
           <li className="education__list-entry">
@@ -45,5 +45,5 @@ export default function Education() {
         </ul>
       </div>
     </div>
-  )
+  );
 }

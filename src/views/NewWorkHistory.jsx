@@ -1,12 +1,12 @@
-import Box from "@mui/material/Box"
-import TextField from "@mui/material/TextField"
-import FormControl from "@mui/material/FormControl"
-import Button from "@mui/material/Button"
-import FilledInput from "@mui/material/FilledInput"
-import InputLabel from "@mui/material/InputLabel"
-import { useState } from "react"
-import { useDispatch } from "react-redux"
-import moment from "moment/moment"
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import FilledInput from '@mui/material/FilledInput';
+import FormControl from '@mui/material/FormControl';
+import InputLabel from '@mui/material/InputLabel';
+import moment from 'moment/moment';
+import TextField from '@mui/material/TextField';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 export default function NewWorkHistory() {
   const dispatch = useDispatch();
@@ -14,14 +14,15 @@ export default function NewWorkHistory() {
   const [formState, setFormState] = useState();
   const [count, setCount] = useState(0);
 
-  const submit = (e) => {
-    if (formState.company && formState.start_date && formState.job_title && formState.job_description) {
-      dispatch({ type: 'NEW_WORK_HISTORY', payload: formState })
+  const submit = () => {
+    if (formState.company
+      && formState.start_date
+      && formState.job_title
+      && formState.job_description) {
+      dispatch({ type: 'NEW_WORK_HISTORY', payload: formState });
       setCount(count + 1);
-    } else {
-      console.log('All fields are required')
     }
-  }
+  };
 
   const handleChange = async (e) => {
     switch (e.target.name) {
@@ -36,40 +37,73 @@ export default function NewWorkHistory() {
         setFormState({
           ...formState,
           [e.target.name]: [...e.target.value.split('; ')],
-        })
+        });
         break;
       default:
         setFormState({
           ...formState,
-          [e.target.name]: e.target.value
-        })
+          [e.target.name]: e.target.value,
+        });
     }
-  }
+  };
 
   return (
     <div className="new-work-history">
-      <h1 className='new-work-history__title'>New Work History Entry</h1>
-      <Box component='form' sx={{ width: 600, mx: 'auto' }}>
+      <h1 className="new-work-history__title">New Work History Entry</h1>
+      <Box component="form" sx={{ width: 600, mx: 'auto' }}>
         <FormControl sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-          <TextField name="company" label='Company' variant="filled" onChange={handleChange} sx={{ mr: 1, mt: 1, mb: 1, width: '100%' }} />
-          <TextField name="job_title" label='Job Title' variant="filled" onChange={handleChange} sx={{ ml: 1, mt: 1, mb: 1, width: '100%' }} />
+          <TextField
+            name="company"
+            label="Company"
+            variant="filled"
+            onChange={handleChange}
+            sx={{
+              mr: 1, mt: 1, mb: 1, width: '100%',
+            }}
+          />
+          <TextField
+            name="job_title"
+            label="Job Title"
+            variant="filled"
+            onChange={handleChange}
+            sx={{
+              ml: 1, mt: 1, mb: 1, width: '100%',
+            }}
+          />
         </FormControl>
         <FormControl sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-          <TextField name="start_date" label='Start Date' variant="filled" onChange={handleChange} sx={{ mr: 1, mt: 1, mb: 1, width: '100%' }} />
-          <TextField name="end_date" label='End Date' variant="filled" onChange={handleChange} sx={{ ml: 1, mt: 1, mb: 1, width: '100%' }} />
+          <TextField
+            name="start_date"
+            label="Start Date"
+            variant="filled"
+            onChange={handleChange}
+            sx={{
+              mr: 1, mt: 1, mb: 1, width: '100%',
+            }}
+          />
+          <TextField
+            name="end_date"
+            label="End Date"
+            variant="filled"
+            onChange={handleChange}
+            sx={{
+              ml: 1, mt: 1, mb: 1, width: '100%',
+            }}
+          />
         </FormControl>
         <FormControl fullWidth sx={{ m: 1, mx: 'auto' }}>
-          <InputLabel variant='filled'>Job Description (separate points with ';')</InputLabel>
+          <InputLabel variant="filled">Job Description (separate points with &lsquo;;&rsquo;)</InputLabel>
           <FilledInput
             multiline
             name="job_description"
             variant="filled"
             onChange={handleChange}
           />
-        </FormControl><br />
-        <Button variant='contained' onClick={() => submit()} sx={{ mt: 1 }}>Submit</Button>
+        </FormControl>
+        <br />
+        <Button variant="contained" onClick={() => submit()} sx={{ mt: 1 }}>Submit</Button>
         <p>{(count > 0) ? `Added ${count} new jobs` : ''}</p>
       </Box>
     </div>
-  )
+  );
 }

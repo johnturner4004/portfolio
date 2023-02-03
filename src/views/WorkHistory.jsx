@@ -1,22 +1,25 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux"
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
-import NavBar from "../components/NavBar";
+import NavBar from '../components/NavBar';
 
 export default function WorkHistory() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch({ type: 'GET_WORK_HISTORY' })
+    dispatch({ type: 'GET_WORK_HISTORY' });
   }, [dispatch]);
 
   return (
     <div>
       <NavBar />
-      <div className='work-history'>
-        <div className='work-history__monitor'>
-          <div className='work-history__monitor-screen'>
-            <h1 className='work-history__company'>Work History<span className='work-history__cursor'>|</span></h1>
+      <div className="work-history">
+        <div className="work-history__monitor">
+          <div className="work-history__monitor-screen">
+            <h1 className="work-history__company">
+              Work History
+              <span className="work-history__cursor">|</span>
+            </h1>
             <ul className="work-history__list">
               <li className="work-history__list-entry">
                 <h2 className="work-history__list-company">Media Junction</h2>
@@ -36,16 +39,47 @@ export default function WorkHistory() {
                   <li className="work-history__list-description">
                     Solo Project: Team zero Gaming app
                     <ul>
-                      <li>App where members and fans of the Team zero Gaming esports team can schedule events and play times, confirm whether of not they will be playing, and see a list of who all is playing. A player who added an event or play time can also edit or delete that event.</li>
-                      <li>Technologies used Material-Ui, React, JavaScript, HTML, Redux, Express, Node.js, PostgreSQL</li>
+                      <li>
+                        App where members and fans of the Team zero
+                        Gaming esports team can schedule events and play
+                        times, confirm whether of not they will be playing,
+                        and see a list of who all is playing. A player who
+                        added an event or play time can also edit or delete
+                        that event.
+                      </li>
+                      <li>
+                        Technologies used Material-Ui, React, JavaScript,
+                        HTML, Redux, Express, Node.js, PostgreSQL
+                      </li>
                     </ul>
                   </li>
                   <li className="work-history__list-description">
                     Group Project: Our Economic Lives
                     <ul>
-                      <li>The goal of this project is to help individuals either advance further in their chosen career path, or get started working towards a new path. The central element of the app is their industry pyramid which is made up of various tiers. Each tier is composed of building block that will have a description, some examples, and a place for them to enter personal examples of how they possess that trait.</li>
-                      <li>My primary role in this project was making the pyramid and linking it to the data in the database. When a user selects a tier, the user is then presented with a set of links for each building block in that tier. When they select a building block it will take them to blocks page and display any info they have already input.</li>
-                      <li>Technologies used Material-Ui, React, JavaScript, HTML, Redux, Express, Node.js, PostgreSQL</li>
+                      <li>
+                        The goal of this project is to help individuals
+                        either advance further in their chosen career path,
+                        or get started working towards a new path. The
+                        central element of the app is their industry pyramid
+                        which is made up of various tiers. Each tier is
+                        composed of building block that will have a
+                        description, some examples, and a place for
+                        them to enter personal examples of how they
+                        possess that trait.
+                      </li>
+                      <li>
+                        My primary role in this project was making
+                        the pyramid and linking it to the data in the
+                        database. When a user selects a tier, the user
+                        is then presented with a set of links for each
+                        building block in that tier. When they select a
+                        building block it will take them to blocks page
+                        and display any info they have already input.
+                      </li>
+                      <li>
+                        Technologies used Material-Ui, React, JavaScript,
+                        HTML, Redux, Express, Node.js, PostgreSQL
+                      </li>
                     </ul>
                   </li>
                 </ul>
@@ -98,7 +132,10 @@ export default function WorkHistory() {
                   <li className="work-history__list-description">Worked several positions starting as a part-time Auto Care Center service writer up to a salaried assistant manager</li>
                   <li className="work-history__list-description">Led diverse groups of people in multiple areas of the stores</li>
                   <li className="work-history__list-description">Motivated associates to meet in-stock goals while continuing to provide good customer service</li>
-                  <li className="work-history__list-description">Number 1 store for T Mobile sales in the second quarter of 2013 out of all T Mobile</li></ul></li>
+                  <li className="work-history__list-description">Number 1 store for T Mobile sales in the second quarter of 2013 out of all T Mobile</li>
+                </ul>
+
+              </li>
               <li className="work-history__list-entry">
                 <h2 className="work-history__list-company">First Baptist Church and School</h2>
                 <p className="work-history__list-date">Aug 2009 - Jul 2011</p>
@@ -120,7 +157,7 @@ export default function WorkHistory() {
             </ul>
           </div>
         </div>
-      </div >
-    </div >
-  )
+      </div>
+    </div>
+  );
 }
