@@ -1,4 +1,4 @@
-import NavBar from '../components/NavBar';
+import NavBar from '../components/NavBar'
 
 export default function About() {
   return (
@@ -43,5 +43,5 @@ export default function About() {
         using Vue instead of React.
       </p>
     </div>
-  );
+  )
 }

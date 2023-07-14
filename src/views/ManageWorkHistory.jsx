@@ -1,58 +1,60 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-prototype-builtins */
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import FilledInput from '@mui/material/FilledInput';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
-import TextField from '@mui/material/TextField';
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect, useState } from 'react'
+
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import FilledInput from '@mui/material/FilledInput'
+import FormControl from '@mui/material/FormControl'
+import InputLabel from '@mui/material/InputLabel'
+import TextField from '@mui/material/TextField'
 
 export default function ManageWorkHistory() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch({ type: 'GET_WORK_HISTORY' });
-  }, [dispatch]);
+    dispatch({ type: 'GET_WORK_HISTORY' })
+  }, [dispatch])
 
-  const workHistory = useSelector((store) => store.workHistory);
-  const [change, setChange] = useState();
+  const workHistory = useSelector((store) => store.workHistory)
+  const [change, setChange] = useState()
 
   const handleChange = (e) => {
-    const tempChange = change;
+    const tempChange = change
     if (change && change[e.target.id]) {
       if (e.target.name === 'job_description') {
-        tempChange[e.target.id].job_description = e.target.value.split('; ');
+        tempChange[e.target.id].job_description = e.target.value.split('; ')
       } else {
-        tempChange[e.target.id][e.target.name] = e.target.value;
+        tempChange[e.target.id][e.target.name] = e.target.value
       }
     } else if (e.target.name === 'job_description') {
       setChange({
         ...change,
         [e.target.id]: { [e.target.name]: e.target.value.split('; ') },
 
-      });
+      })
     } else {
       setChange({
         ...change,
         [e.target.id]: {
           [e.target.name]: e.target.value,
         },
-      });
+      })
     }
-  };
+  }
 
   const handleSubmit = (e) => {
     if (change && change.hasOwnProperty(e.target.dataset.id)) {
-      dispatch({ type: 'UPDATE_WORK_HISTORY', payload: { id: e.target.dataset.id, update: change[e.target.dataset.id] } });
+      dispatch({ type: 'UPDATE_WORK_HISTORY', payload: { id: e.target.dataset.id, update: change[e.target.dataset.id] } })
     }
-  };
+  }
 
   const handleDelete = (e) => {
-    const { id } = e.target.dataset;
-    dispatch({ type: 'DELETE_WORK_HISTORY', payload: id });
-  };
+    const { id } = e.target.dataset
+    dispatch({ type: 'DELETE_WORK_HISTORY', payload: id })
+  }
 
   return (
     <div className="manage-work-history">
@@ -141,5 +143,5 @@ export default function ManageWorkHistory() {
         }
       </ul>
     </div>
-  );
+  )
 }

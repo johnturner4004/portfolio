@@ -47,6 +47,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 .name {
   background-color: #00f;
   color: #fff;
+  width: -moz-fit-content;
   width: fit-content;
   min-width: 28.125rem;
   border-radius: 1.25rem;
@@ -435,7 +436,9 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
     padding: 0.625rem;
     border-radius: 0.3125rem;
     box-shadow: 0 0 30px 10px #444;
+    width: -moz-fit-content;
     width: fit-content;
+    height: -moz-fit-content;
     height: fit-content;
     margin: 0.9375rem;
     position: fixed;
@@ -475,6 +478,11 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
     padding: 4.6875rem 0.625rem 0.625rem 0.625rem;
   }
 }
+.sample-container {
+  padding: 1.25rem;
+  width: 360px;
+  height: 300px;
+}
 
 .thumbnail iframe {
   width: 1440px;
@@ -484,14 +492,16 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 }
 
 .thumbnail {
+  width: 1440px;
   position: relative;
   cursor: pointer;
-  -ms-zoom: 0.25;
+  transform: scale(0.25);
   -moz-transform: scale(0.25);
-  -moz-transform-origin: 0 0;
   -o-transform: scale(0.25);
-  -o-transform-origin: 0 0;
   -webkit-transform: scale(0.25);
+  transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
   -webkit-transform-origin: 0 0;
 }
 
@@ -579,6 +589,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   font-size: 3rem;
   font-weight: 700;
   color: #eee;
+  width: -moz-fit-content;
   width: fit-content;
 }
 .mortgage-empty__small {

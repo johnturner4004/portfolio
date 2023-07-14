@@ -1,8 +1,7 @@
-import { combineReducers } from "redux";
+import { combineReducers } from 'redux'
+import education from './education.reducer'
+import workHistory from './work-history.reducer'
 
-import workHistory from "./work-history.reducer";
-import education from './education.reducer';
+const rootReducer = combineReducers({ workHistory, education })
 
-const rootReducer = combineReducers({workHistory, education});
-
-export default rootReducer;
+export default rootReducer

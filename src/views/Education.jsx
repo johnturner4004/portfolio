@@ -1,13 +1,13 @@
-import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import NavBar from '../components/NavBar';
+import { useDispatch } from 'react-redux'
+import { useEffect } from 'react'
+import NavBar from '../components/NavBar'
 
 export default function Education() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch({ type: 'GET_EDUCATION' });
-  }, [dispatch]);
+    dispatch({ type: 'GET_EDUCATION' })
+  }, [dispatch])
 
   return (
     <div>
@@ -45,5 +45,5 @@ export default function Education() {
         </ul>
       </div>
     </div>
-  );
+  )
 }

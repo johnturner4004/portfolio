@@ -1,7 +1,7 @@
-import Name from '../components/Name';
-import NameCard from '../components/NameCard';
-import NavBar from '../components/NavBar';
-import Skill from '../components/Skill';
+import Name from '../components/Name'
+import NameCard from '../components/NameCard'
+import NavBar from '../components/NavBar'
+import Skill from '../components/Skill'
 
 export default function Home() {
   return (
@@ -13,5 +13,5 @@ export default function Home() {
       </div>
       <Skill />
     </div>
-  );
+  )
 }

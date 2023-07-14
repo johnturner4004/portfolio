@@ -1,8 +1,8 @@
 export default function NameCard() {
-  return(
-    <div className='name-card__wrapper'>
+  return (
+    <div className="name-card__wrapper">
       <div className="name-card">
-        <div className='name-card__row'>
+        <div className="name-card__row">
           <p className="name-card__info">
             John Turner
           </p>
@@ -10,7 +10,7 @@ export default function NameCard() {
             Name
           </p>
         </div>
-        <div className='name-card__row'>
+        <div className="name-card__row">
           <p className="name-card__info">
             johnturner4004@gmail.com
           </p>
@@ -18,7 +18,7 @@ export default function NameCard() {
             Email
           </p>
         </div>
-        <div className='name-card__row'>
+        <div className="name-card__row">
           <p className="name-card__info">
             612.203.0666
           </p>
@@ -26,7 +26,7 @@ export default function NameCard() {
             Phone
           </p>
         </div>
-        <div className='name-card__row'>
+        <div className="name-card__row">
           <p className="name-card__info">
             17695 Exira Ave W
           </p>
@@ -34,7 +34,7 @@ export default function NameCard() {
             Address
           </p>
         </div>
-        <div className='name-card__row'>
+        <div className="name-card__row">
           <p className="name-card__info">
             Farmington, MN 55024
           </p>
@@ -42,7 +42,7 @@ export default function NameCard() {
             City, State Zip
           </p>
         </div>
-        <div className="name-card__holes"></div>
+        <div className="name-card__holes" />
       </div>
     </div>
   )

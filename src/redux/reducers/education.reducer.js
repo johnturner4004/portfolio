@@ -1,10 +1,10 @@
-const education = (state = [], action) => {
-  switch (action.type) {
-    case 'SET_EDUCATION':
-      return action.payload;
-    default:
-      return state;
-  }
-}
+// const education = (action, state = []) => {
+//   switch (action.type) {
+//   case 'SET_EDUCATION':
+//     return action.payload
+//   default:
+//     return state
+//   }
+// }
 
-export default education;
+// export default education

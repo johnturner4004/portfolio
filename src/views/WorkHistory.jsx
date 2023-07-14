@@ -1,14 +1,13 @@
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-
-import NavBar from '../components/NavBar';
+import { useDispatch } from 'react-redux'
+import { useEffect } from 'react'
+import NavBar from '../components/NavBar'
 
 export default function WorkHistory() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch({ type: 'GET_WORK_HISTORY' });
-  }, [dispatch]);
+    dispatch({ type: 'GET_WORK_HISTORY' })
+  }, [dispatch])
 
   return (
     <div>
@@ -159,5 +158,5 @@ export default function WorkHistory() {
         </div>
       </div>
     </div>
-  );
+  )
 }

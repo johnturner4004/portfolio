@@ -1,44 +1,48 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import reportWebVitals from './reportWebVitals';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import createSagaMiddleware from 'redux-saga';
-// import logger from 'redux-logger';
-import { configureStore } from '@reduxjs/toolkit'
+/* eslint-disable react/jsx-filename-extension */
 
-import rootReducer from './redux/reducers/_root.reducer';
-import rootSaga from './redux/sagas/_root.saga.js'
-
-import './index.css';
+import './index.css'
 import './styles/main.css'
 
-import Home from './views/Home';
-import Error from './views/Error';
-import WorkHistory from './views/WorkHistory';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+
+import { Provider } from 'react-redux'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { configureStore } from '@reduxjs/toolkit'
+import createSagaMiddleware from 'redux-saga'
+import About from './views/About'
+import Education from './views/Education'
+import Error from './views/Error'
+import Home from './views/Home'
+import Mortgage from './views/Mortgage'
+import Sample from './views/Sample'
+import WorkHistory from './views/WorkHistory'
+import reportWebVitals from './reportWebVitals'
+import rootReducer from './redux/reducers/_root.reducer'
+import rootSaga from './redux/sagas/_root.saga'
+
+// import logger from 'redux-logger';
+
 // import NewWorkHistory from './views/NewWorkHistory';
 // import ManageWorkHistory from './views/ManageWorkHistory';
-import Education from './views/Education';
+
 // import NewEducation from './views/NewEducation';
 // import ManageEducation from './views/ManageEducation';
-import About from './views/About';
+
 // import Login from './views/Login';
-import Sample from './views/Sample';
-import Mortgage from './views/Mortgage';
 
-const sagaMiddleware = createSagaMiddleware();
+const sagaMiddleware = createSagaMiddleware()
 
-
-const middlewareList = process.env.NODE_ENV ?
-[sagaMiddleware] :
-[sagaMiddleware];
+const middlewareList = process.env.NODE_ENV
+  ? [sagaMiddleware]
+  : [sagaMiddleware]
 
 const store = configureStore({
-  reducer: rootReducer, 
-  middleware: middlewareList
+  reducer: rootReducer,
+  middleware: middlewareList,
 })
 
-sagaMiddleware.run(rootSaga);
+sagaMiddleware.run(rootSaga)
 
 const router = createBrowserRouter([
   {
@@ -46,15 +50,15 @@ const router = createBrowserRouter([
     element: <Home />,
     errorElement: <Error />,
     children: [
-    ]
+    ],
   },
   {
     path: 'work-history',
-    element: <WorkHistory />
+    element: <WorkHistory />,
   },
   {
     path: 'education',
-    element: <Education />
+    element: <Education />,
   },
   {
     path: 'sample',
@@ -62,11 +66,11 @@ const router = createBrowserRouter([
   },
   {
     path: 'sample/mortgage',
-    element: <Mortgage />
+    element: <Mortgage />,
   },
   {
     path: 'about',
-    element: <About />
+    element: <About />,
   },
   // {
   //   path: 'work-history/new',
@@ -79,26 +83,26 @@ const router = createBrowserRouter([
   // {
   //   path: 'education/new',
   //   element: <NewEducation />
-    // },
-    // {
-      //   path: 'education/manage',
-      //   element: <ManageEducation />
-      // },
-      // {
+  // },
+  // {
+  //   path: 'education/manage',
+  //   element: <ManageEducation />
+  // },
+  // {
   //   path: 'login',
   //   element: <Login />
   // }
 ])
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <RouterProvider router={router} />
     </Provider>
-  </React.StrictMode>
-);
+  </React.StrictMode>,
+)
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+reportWebVitals()

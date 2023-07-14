@@ -1,51 +1,51 @@
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import FilledInput from '@mui/material/FilledInput';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
-import moment from 'moment/moment';
-import TextField from '@mui/material/TextField';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import FilledInput from '@mui/material/FilledInput'
+import FormControl from '@mui/material/FormControl'
+import InputLabel from '@mui/material/InputLabel'
+import TextField from '@mui/material/TextField'
+import moment from 'moment/moment'
+import { useDispatch } from 'react-redux'
+import { useState } from 'react'
 
 export default function NewWorkHistory() {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
-  const [formState, setFormState] = useState();
-  const [count, setCount] = useState(0);
+  const [formState, setFormState] = useState()
+  const [count, setCount] = useState(0)
 
   const submit = () => {
     if (formState.company
       && formState.start_date
       && formState.job_title
       && formState.job_description) {
-      dispatch({ type: 'NEW_WORK_HISTORY', payload: formState });
-      setCount(count + 1);
+      dispatch({ type: 'NEW_WORK_HISTORY', payload: formState })
+      setCount(count + 1)
     }
-  };
+  }
 
   const handleChange = async (e) => {
     switch (e.target.name) {
-      case 'start_date':
-      case 'end_date':
-        setFormState({
-          ...formState,
-          [e.target.name]: moment(e.target.value),
-        });
-        break;
-      case 'job_description':
-        setFormState({
-          ...formState,
-          [e.target.name]: [...e.target.value.split('; ')],
-        });
-        break;
-      default:
-        setFormState({
-          ...formState,
-          [e.target.name]: e.target.value,
-        });
+    case 'start_date':
+    case 'end_date':
+      setFormState({
+        ...formState,
+        [e.target.name]: moment(e.target.value),
+      })
+      break
+    case 'job_description':
+      setFormState({
+        ...formState,
+        [e.target.name]: [...e.target.value.split('; ')],
+      })
+      break
+    default:
+      setFormState({
+        ...formState,
+        [e.target.name]: e.target.value,
+      })
     }
-  };
+  }
 
   return (
     <div className="new-work-history">
@@ -105,5 +105,5 @@ export default function NewWorkHistory() {
         <p>{(count > 0) ? `Added ${count} new jobs` : ''}</p>
       </Box>
     </div>
-  );
+  )
 }
