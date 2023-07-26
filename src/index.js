@@ -14,6 +14,7 @@ import About from './views/About'
 import Education from './views/Education'
 import Error from './views/Error'
 import Home from './views/Home'
+import Map from './views/Map'
 import Mortgage from './views/Mortgage'
 import Sample from './views/Sample'
 import WorkHistory from './views/WorkHistory'
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
   {
     path: 'sample/mortgage',
     element: <Mortgage />,
+  },
+  {
+    path: 'sample/map',
+    element: <Map />,
   },
   {
     path: 'about',
