@@ -323,6 +323,7 @@ module.exports = {
           'Pmt',
           'pmt',
           'Perf',
+          'googlemaps',
         ],
         skipIfMatch: [
           'http(s)?://[^s]*',

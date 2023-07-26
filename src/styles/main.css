@@ -666,4 +666,8 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 }
 .mortgage-schedule__list-item:nth-child(2n) {
   background-color: #eee;
+}
+
+#map {
+  height: 600px;
 }/*# sourceMappingURL=main.css.map */
