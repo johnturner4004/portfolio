@@ -39,6 +39,7 @@ module.exports = {
           'cordova',
           'cssnano',
           'del', // gulp plugin name
+          'dotenv',
           'eslint',
           'github',
           'gmap',
@@ -62,6 +63,7 @@ module.exports = {
           'streamqueue', // node package
           'touchspin',
           'uglify',
+          'urlencoded',
           'webdriver',
 
           // file extensions
@@ -179,6 +181,7 @@ module.exports = {
           'raquo',
           'reconfiguring',
           'redux',
+          'reduxjs',
           'refetch',
           'refetching',
           'ret',
@@ -314,6 +317,12 @@ module.exports = {
           'bar',
           'baz',
           'quux',
+
+          // project specific
+          'Bal',
+          'Pmt',
+          'pmt',
+          'Perf',
         ],
         skipIfMatch: [
           'http(s)?://[^s]*',
