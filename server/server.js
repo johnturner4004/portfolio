@@ -1,15 +1,34 @@
 /* eslint-disable no-console */
 
-require('dotenv').config()
-const express = require('express')
-const bodyParser = require('body-parser')
+import { Loader } from '@googlemaps/js-api-loader'
+import bodyParser from 'body-parser'
+import dotenv from 'dotenv'
+import express from 'express'
+
+dotenv.config()
 
 const app = express()
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.use(express.static('build'))
+const mapKey = process.env.MAP_API
+
+const loader = new Loader({
+  apiKey: mapKey,
+  version: 'weekly',
+})
+
+loader.load().then(async () => {
+  // eslint-disable-next-line no-undef
+  const { Map } = await google.maps.importLibrary('maps')
+}).catch((err) => {
+  console.error('error getting map', err)
+})
+
+app.get('/api/map', (req, res) => {
+  res.send(loader)
+})
 
 const PORT = process.env.PORT || 5000
 

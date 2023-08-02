@@ -1,4 +1,5 @@
 import { Loader } from '@googlemaps/js-api-loader'
+import TextField from '@mui/material/TextField'
 
 // eslint-disable-next-line spellcheck/spell-checker
 const API_KEY = 'AIzaSyBXd4PHFJV9ftDb5vou2hDGH1TGWMJuHcM'
@@ -22,7 +23,22 @@ loader.load().then(async () => {
 export default function MapPage() {
   return (
     <div className="map">
-      <div id="map" />
+      <h1 className="map-title">Sample Map</h1>
+      <div className="map-search">
+        <TextField
+          name="search"
+          label="Search"
+        />
+      </div>
+      <div className="map-results">
+        <div className="map-results_list">
+          <ul>
+            <li>First</li>
+            <li>Second</li>
+          </ul>
+        </div>
+        <div id="map" />
+      </div>
     </div>
   )
 }

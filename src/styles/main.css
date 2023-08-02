@@ -668,6 +668,25 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   background-color: #eee;
 }
 
+.map {
+  padding: 1.25rem;
+}
+.map-title {
+  padding: 1.25rem;
+}
+.map-search {
+  padding: 1.25rem;
+}
+.map-results {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.map-results__list {
+  width: 25%;
+}
+
 #map {
   height: 600px;
+  width: 75%;
 }/*# sourceMappingURL=main.css.map */

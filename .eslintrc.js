@@ -213,6 +213,7 @@ module.exports = {
           'typedef',
           'ui',
           'uncomment',
+          'undef',
           'unfulfillable',
           'ungroup',
           'ungrouped',

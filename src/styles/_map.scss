@@ -1,7 +1,26 @@
 .map {
-  
+  padding: rem(20);
+
+  &-title {
+    padding: rem(20);
+  }
+
+  &-search {
+    padding: rem(20);
+  }
+
+  &-results {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    &__list{
+      width: 25%;
+    }
+  }
 }
 
 #map {
   height: 600px;
+  width: 75%;
 }
