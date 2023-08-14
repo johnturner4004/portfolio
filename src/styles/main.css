@@ -673,14 +673,24 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
 }
 .map-title {
   padding: 1.25rem;
+  text-align: center;
 }
 .map-search {
   padding: 1.25rem;
-}
-.map-results {
   display: flex;
   justify-content: space-between;
+}
+.map-results {
+  width: 20%;
+  padding: 0 1.25rem;
+}
+.map-results__input {
   width: 100%;
+}
+.map-results__button {
+  padding: 1.25rem 0;
+  display: flex;
+  justify-content: flex-end;
 }
 .map-results__list {
   width: 25%;

@@ -168,6 +168,7 @@ module.exports = {
           'polyfilled',
           'polyfills',
           'popup',
+          'pos',
           'prefetch',
           'preload',
           'preloaded',
