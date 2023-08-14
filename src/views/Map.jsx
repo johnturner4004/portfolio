@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+
 import { Loader } from '@googlemaps/js-api-loader'
 import TextField from '@mui/material/TextField'
 
@@ -9,18 +11,34 @@ const loader = new Loader({
   version: 'weekly',
 })
 
-loader.load().then(async () => {
-  // eslint-disable-next-line no-undef
-  const { Map } = await google.maps.importLibrary('maps')
-
-  // eslint-disable-next-line no-unused-vars
-  const map = new Map(document.getElementById('map'), {
-    center: { lat: 44.6402, lng: -93.1435 },
-    zoom: 12,
-  })
-})
+const handleChange = (e) => {
+  console.log(e.target.value)
+}
 
 export default function MapPage() {
+  // eslint-disable-next-line no-unused-vars
+  const [center, setCenter] = useState({ lat: 44.6402, lng: -93.1435 })
+
+  const getLocation = () => {
+    navigator.geolocation.getCurrentPosition((pos) => {
+      setCenter({ lat: pos.coords.latitude, lng: pos.coords.longitude })
+    })
+  }
+
+  useEffect(() => {
+    getLocation()
+  }, [])
+
+  loader.load().then(async () => {
+    // eslint-disable-next-line no-undef
+    const { Map } = await google.maps.importLibrary('maps')
+
+    // eslint-disable-next-line no-unused-vars
+    const map = new Map(document.getElementById('map'), {
+      center,
+      zoom: 12,
+    })
+  })
   return (
     <div className="map">
       <h1 className="map-title">Sample Map</h1>
@@ -28,6 +46,7 @@ export default function MapPage() {
         <TextField
           name="search"
           label="Search"
+          onChange={(e) => handleChange(e)}
         />
       </div>
       <div className="map-results">
