@@ -8,7 +8,13 @@ import {
   Marker,
   useLoadScript,
 } from '@react-google-maps/api'
-import { useEffect, useState } from 'react'
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
+import usePlacesAutocomplete, { getGeocode, getLatLng } from 'use-places-autocomplete'
 
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
@@ -272,10 +278,20 @@ const mapOptions = {
 export default function MapPage() {
   const [center, setCenter] = useState({ lat: 44.6402, lng: -93.1435 })
   const [search, setSearch] = useState('')
+  const [hide, setHide] = useState(false)
 
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: apiKey,
     libraries,
+  })
+
+  const {
+    ready, value, suggestions: { status, data }, setValue, clearSuggestions,
+  } = usePlacesAutocomplete({
+    // requestOptions: {
+    //   location: { lat: () => center.lat, lng: () => center.lng },
+    //   radius: 200 * 1000,
+    // },
   })
 
   if (loadError) return 'Error loading map'
@@ -286,13 +302,34 @@ export default function MapPage() {
     }, (err) => console.error(err))
   }
 
+  const panTo = useCallback(({ lat, lng }) => {
+    setCenter({ lat, lng })
+  }, [])
+
   const handleChange = (e) => {
     setSearch(e.target.value)
+    setValue(e.target.value)
+    setHide(true)
   }
 
   const handleSubmit = () => {
     console.log('click')
     console.log(search)
+  }
+
+  const handleSelect = async (address) => {
+    console.log(address.description)
+    try {
+      const results = await getGeocode({ address: address.description })
+      const { lat, lng } = getLatLng(results[0])
+      console.log(lat, lng)
+      setValue(results[0].formatted_address)
+      panTo({ lat, lng })
+      clearSuggestions()
+      setHide(false)
+    } catch (err) {
+      console.error(err)
+    }
   }
 
   useEffect(() => {
@@ -309,9 +346,15 @@ export default function MapPage() {
               className="map-results__input"
               name="search"
               label="Search"
+              value={value}
               onChange={(e) => handleChange(e)}
             />
             <br />
+            <div className="map-results__autofill">
+              {
+                hide && status === 'OK' && data.map(({ id, description }) => <button type="button" className="map-results__autofill-item" key={description} onClick={() => handleSelect({ description })}>{description}</button>)
+              }
+            </div>
             <div className="map-results__button">
               <Button
                 variant="contained"
