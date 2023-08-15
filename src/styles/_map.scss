@@ -1,0 +1,67 @@
+.map {
+  padding: rem(20);
+
+  &-title {
+    padding: rem(20);
+    text-align: center;
+  }
+
+  &-search {
+    padding: rem(20);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-results {
+    width: 20vw;
+    padding: 0 rem(20);
+    position: relative;
+
+    &__input {
+      width: 100%;
+    }
+
+    &__autofill {
+      position: absolute;
+      background-color: #fff;
+      box-shadow: rem(5) rem(5) rem(22) rem(0) #000;
+      border-radius: rem(5);
+      width: calc(20vw - rem(15));
+      z-index: 10;
+
+      &-item {
+        padding: rem(10);
+        background-color: transparent;
+        border: none;
+        width: 100%;
+        text-align: left;
+
+        &:hover {
+          color: #fff;
+          background-color: #1776d1;
+        }
+
+        transition: color, background-color .5s ease-in-out;
+      }
+    }
+
+    &__button {
+      padding: rem(20) 0;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    &__list {
+      width: 25%;
+    }
+  }
+}
+
+#map {
+  height: 600px;
+  width: 75%;
+}
+
+.hidden {
+  display: none;
+}

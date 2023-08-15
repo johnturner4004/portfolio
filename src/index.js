@@ -5,38 +5,40 @@ import './styles/main.css'
 
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
-import { Provider } from 'react-redux'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { configureStore } from '@reduxjs/toolkit'
-import createSagaMiddleware from 'redux-saga'
 import About from './views/About'
 import Education from './views/Education'
 import Error from './views/Error'
 import Home from './views/Home'
-import Map from './views/Map'
+import MapPage from './views/Map'
 import Mortgage from './views/Mortgage'
 import Sample from './views/Sample'
 import WorkHistory from './views/WorkHistory'
 import reportWebVitals from './reportWebVitals'
+
+/*
+import { Provider } from 'react-redux'
+import { configureStore } from '@reduxjs/toolkit'
+import createSagaMiddleware from 'redux-saga'
 import rootReducer from './redux/reducers/_root.reducer'
 import rootSaga from './redux/sagas/_root.saga'
 
-// import logger from 'redux-logger';
+import logger from 'redux-logger';
 
-// import NewWorkHistory from './views/NewWorkHistory';
-// import ManageWorkHistory from './views/ManageWorkHistory';
+import NewWorkHistory from './views/NewWorkHistory';
+import ManageWorkHistory from './views/ManageWorkHistory';
 
-// import NewEducation from './views/NewEducation';
-// import ManageEducation from './views/ManageEducation';
+import NewEducation from './views/NewEducation';
+import ManageEducation from './views/ManageEducation';
 
-// import Login from './views/Login';
+import Login from './views/Login';
 
 const sagaMiddleware = createSagaMiddleware()
 
 const middlewareList = process.env.NODE_ENV
-  ? [sagaMiddleware]
-  : [sagaMiddleware]
+\? [sagaMiddleware]
+: [sagaMiddleware]
 
 const store = configureStore({
   reducer: rootReducer,
@@ -44,6 +46,7 @@ const store = configureStore({
 })
 
 sagaMiddleware.run(rootSaga)
+*/
 
 const router = createBrowserRouter([
   {
@@ -71,7 +74,7 @@ const router = createBrowserRouter([
   },
   {
     path: 'sample/map',
-    element: <Map />,
+    element: <MapPage />,
   },
   {
     path: 'about',
@@ -101,9 +104,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <RouterProvider router={router} />
-    </Provider>
+    {/* <Provider store={store}> */}
+    <RouterProvider router={router} />
+    {/* </Provider> */}
   </React.StrictMode>,
 )
 
