@@ -5,7 +5,7 @@ import './styles/main.css'
 
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
-import { Analytics } from '@vercel/analytics/react'
+import { Analytics } from '@vercel/analytics'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import About from './views/About'
