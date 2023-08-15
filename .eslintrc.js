@@ -35,6 +35,7 @@ module.exports = {
           //
           'analytics',
           'atlassian',
+          'autofill',
           'autoprefixer',
           'cordova',
           'cssnano',
